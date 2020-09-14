@@ -1,9 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,700;1,300&display=swap");
-@media only screen and (max-width: 600px) {
-  .page-title {
-    zoom: 0.6;
-  }
-}
 .page-title {
   --blue: #47A8BD;
   --yellow: #EEC643;
@@ -12,6 +7,11 @@
   --paintwater: #A18E81;
   position: relative;
   display: block;
+}
+@media only screen and (max-width: 600px) {
+  .page-title {
+    zoom:0.6;
+  }
 }
 .page-title h1 {
   z-index: 10;
@@ -63,7 +63,6 @@
 
 body {
   background: #EDEDF4;
-  height: 100vh;
   margin: 0;
   display: grid;
   font-family: 'Roboto', sans-serif;
