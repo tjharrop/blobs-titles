@@ -61,6 +61,24 @@ html, body {
   font-weight: 300;
   font-size: 25px;
 }
+a {
+  text-decoration: none;
+  border-bottom: 1px dashed #2E51D1;
+  color: #2E51D1;
+  background: white;
+  outline: 2px solid white;
+  transition: 0.1s;
+}
+a:hover {
+  color: #E6524C;
+  border-color: #E6524C;
+}
+.section.contact p {
+  line-height: 2;
+}
+ul li {
+  margin: 10px 0;
+}
 .page-title {
   position: fixed;
   top: 0;

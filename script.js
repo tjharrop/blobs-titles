@@ -54,4 +54,13 @@ $(document).ready(function() {
       var tween = KUTE.to('#blobpath', { path: 'M56.3,-65.1C71.3,-54.6,80.5,-35.2,80.1,-17.1C79.7,0.9,69.7,17.7,58.7,31.1C47.6,44.5,35.6,54.5,21.8,59.1C8.1,63.6,-7.2,62.8,-25.5,60.3C-43.8,57.9,-65.1,53.9,-77.4,40.7C-89.7,27.6,-93,5.3,-86.6,-12.5C-80.2,-30.4,-64.1,-43.8,-48.1,-54.2C-32,-64.5,-16,-71.9,2.3,-74.6C20.7,-77.4,41.4,-75.7,56.3,-65.1Z', svgTransform: {scale:4} }).start();
     }
   });
+
+  // Bind to the click of all links with a #hash in the href
+  $('a[href^="#"]').click(function(e) {
+    // Prevent the jump and the #hash from appearing on the address bar
+    e.preventDefault();
+    // Scroll the window, stop any previous animation, stop on user manual scroll
+    // Check https://github.com/flesler/jquery.scrollTo for more customizability
+    $(window).stop(true).scrollTo(this.hash, {duration:300, interrupt:false});
+  });
 });
