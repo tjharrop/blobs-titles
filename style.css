@@ -32,6 +32,7 @@
   }
   .section {
     padding: 50px 100px;
+    max-width: 1000px;
   }
   .section h1 {
     margin: 50px 0;
@@ -58,7 +59,7 @@ html, body {
 }
 .section h2 {
   font-weight: 300;
-  font-size: 30px;
+  font-size: 25px;
 }
 .page-title {
   position: fixed;
