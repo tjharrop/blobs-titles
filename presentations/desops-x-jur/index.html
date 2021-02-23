@@ -1,1 +1,83 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="tjharrop-theme.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+		<style>
+			.blob {
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				top: 0;
+				right: 0;
+				transition: all .7s ease-in-out;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>Slide 1</section>
+				<section>Slide 2</section>
+			</div>
+		</div>
+		<div class="blob"></div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				transition: 'fade',
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			}).then( () => {
+			  generateBlob();
+				document.querySelector('.blob').style.opacity = "1"
+			} );
+
+			Reveal.on( 'slidechanged', event => {
+				generateBlob();
+			} );
+
+			function generateBlob() {
+				const colors = ["#D45B52","#829C92","#61A4B8","#E8C75C","#B5A496","#E8865E","#E38A85","#519DD8","#88D4D8", "#7B9C90"];
+				const rand = Math.floor(Math.random()*colors.length);
+			  const percentage1 = _.random(15, 75);
+			  const percentage2 = _.random(25, 95);
+				const percentage3 = _.random(15, 60);
+			  const percentage4 = _.random(25, 75);
+				const top = _.random(-25, 85); //top
+				const right = _.random(-20, 10); //right
+				const rotate = _.random(0, 180); //rotate
+				const zoom = _.random(5, 12);
+			  var percentage11 = 100 - percentage1;
+			  var percentage21 = 100 - percentage2;
+			  var percentage31 = 100 - percentage3;
+			  var percentage41 = 100 - percentage4;
+			  var borderRadius = `${percentage1}% ${percentage11}% ${percentage21}% ${percentage2}% / ${percentage3}% ${percentage4}% ${percentage41}% ${percentage31}%`;
+				document.querySelector('.blob').style.right = `${right}%`
+				document.querySelector('.blob').style.top = `${top}%`
+				document.querySelector('.blob').style.transform =  `scale(${zoom}) rotateZ(${rotate}deg)`
+				document.querySelector('.blob').style.background =  colors[rand]
+			  document.querySelector('.blob').style.borderRadius = borderRadius
+			}
+		</script>
+	</body>
+</html>
