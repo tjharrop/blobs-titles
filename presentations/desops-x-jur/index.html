@@ -18,16 +18,51 @@
 				position: absolute;
 				width: 200px;
 				height: 200px;
-				top: 0;
-				right: 0;
 				transition: all .7s ease-in-out;
+				/* Default styling */
+				right: -3%; top: 30%; transform: scale(11) rotateZ(29deg); background: rgb(252, 191, 73); border-radius: 52% 48% 56% 44% / 53% 56% 44% 47%; opacity: 1;
+			}
+
+			.headshot{
+			  background-image: url('IMG_4477.JPG');
+				background-position: top;
+				background-size: cover;
+			  border-radius: 70% 30% / 30% 32% 68% 70%;
+			  width: 350px; height: 350px;
+			  animation: morph 40s ease-in-out infinite;
+			  transform-style: preserve-3d;
+			  outline: 1px solid transparent;
+			  will-change: border-radius;border: 3px solid rgba(0,0,0,0.6);
+			}
+
+
+			@keyframes morph{
+			  0%,100% {
+			    border-radius: 70% 30% / 30% 32% 68% 70%;
+			  }
+			  20% {
+			    border-radius: 62% 38% 34% 66% / 29% 28% 72% 71%;
+			  }
+			  40% {
+			    border-radius: 27% 73% 34% 66% / 47% 34% 66% 53%;
+			  }
+			  60% {
+			    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
+			  }
+			  80% {
+			    border-radius: 59% 41% 40% 60% / 60% 34% 66% 40%;
+			  }
 			}
 		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
+				<section>
+					Introduction
+					<br>
+					<img class="headshot"></img>
+				</section>
 				<section>Slide 2</section>
 			</div>
 		</div>
@@ -38,39 +73,45 @@
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js" integrity="sha512-yocoLferfPbcwpCMr8v/B0AB4SWpJlouBwgE0D3ZHaiP1nuu5djZclFEIj9znuqghaZ3tdCMRrreLoM8km+jIQ==" crossorigin="anonymous"></script>
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
 				transition: 'fade',
-				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			}).then( () => {
-			  generateBlob();
-				document.querySelector('.blob').style.opacity = "1"
+			  // generateBlob();
 			} );
 
 			Reveal.on( 'slidechanged', event => {
 				generateBlob();
 			} );
 
+			document.addEventListener("keydown", event => {
+			  if (event.keyCode === 71) {
+			    generateBlob();
+			  }
+			});
+
 			function generateBlob() {
-				const colors = ["#D45B52","#829C92","#61A4B8","#E8C75C","#B5A496","#E8865E","#E38A85","#519DD8","#88D4D8", "#7B9C90","#D65C83","#FCBF49","#33E4FF","#F66C51","#33C1B1"];				const rand = Math.floor(Math.random()*colors.length);
-			  const percentage1 = _.random(15, 75);
-			  const percentage2 = _.random(25, 95);
-				const percentage3 = _.random(15, 60);
+				const colors = ["#D45B52","#829C92","#61A4B8","#E8C75C","#B5A496","#E8865E","#E38A85","#519DD8","#88D4D8", "#7B9C90","#D65C83","#FCBF49","#33E4FF","#F66C51","#33C1B1"];
+				const rand = Math.floor(Math.random()*colors.length);
+
+			  const percentage1 = _.random(20, 75);
+			  const percentage2 = _.random(30, 95);
+				const percentage3 = _.random(18, 60);
 			  const percentage4 = _.random(25, 75);
-				const top = _.random(-25, 85); //top
-				const right = _.random(-20, 10); //right
-				const rotate = _.random(0, 180); //rotate
-				const zoom = _.random(5, 12);
-			  var percentage11 = 100 - percentage1;
+				var percentage11 = 100 - percentage1;
 			  var percentage21 = 100 - percentage2;
 			  var percentage31 = 100 - percentage3;
 			  var percentage41 = 100 - percentage4;
 			  var borderRadius = `${percentage1}% ${percentage11}% ${percentage21}% ${percentage2}% / ${percentage3}% ${percentage4}% ${percentage41}% ${percentage31}%`;
+
+				const top = _.random(-25, 85); //top
+				const right = _.random(-20, 10); //right
+				const rotate = _.random(0, 180); //rotate
+				const zoom = _.random(5, 12);
+
 				document.querySelector('.blob').style.right = `${right}%`
 				document.querySelector('.blob').style.top = `${top}%`
 				document.querySelector('.blob').style.transform =  `scale(${zoom}) rotateZ(${rotate}deg)`
