@@ -42,9 +42,15 @@
 			  will-change: border-radius;border: 3px solid rgba(0,0,0,0.6);
 			}
 
+			.tjspacer {
+				max-width: 90%;
+				max-height: 90%;
+			}
+
 			.goLeft {
 				padding:7%;
 				text-align: left;
+				max-width: 900px;
 			}
 
 			.twocolumn {
@@ -81,7 +87,8 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-fullscreen class="goLeft">
-					<h1>Introduction</h1>
+					<h1>DesignOps in gov’</h1>
+					<p>Supporting design, not just designers</p>
 					<br><br>
 					<h3>TJ Harrop</h3>
 					<p>Product Manager, NSW Digital Service Toolkit</p>
@@ -96,30 +103,185 @@
 				<section data-fullscreen>
 					<div class="twocolumn">
 						<div class="col">
-							<h1>How I got into all this</h1>
+							<h2>History of the Design System</h2>
 						</div>
 						<div class="col">
 							<ul>
-								<li>Masquerading as a dev</li>
-								<li>Got into UX</li>
-								<li>Got senior in UX</li>
-								<li>UX grew &amp; changed</li>
-								<li>Found my ❤️ in the gaps</li>
+								<li>DS 1.0 - DTA + Rebrand</li>
+								<li>DS 2.0 - Complete build</li>
+								<li>DS 3.0 - Digital Service Toolkit</li>
 							</ul>
 						</div>
 					</div>
-
 				</section>
 				<section data-fullscreen>
-					<h1>Slide 2</h1>
 					<div class="twocolumn">
 						<div class="col">
-							Column One
+							<h2>Digital Service Toolkit?</h2>
 						</div>
 						<div class="col">
-							Column Two
+							<ul>
+								<li><span style="text-decoration: line-through;">Sketch</span> Figma</li>
+								<li>HTML + CSS</li>
+								<li class="fragment fade-up">+ React components</li>
+								<li class="fragment fade-up">+ Guidance</li>
+								<li class="fragment fade-up">+ Integrations</li>
+								<li class="fragment fade-up">+ Complete solutions</li>
+							</ul>
 						</div>
 					</div>
+				</section>
+				<section data-fullscreen class="goLeft">
+					<h1>What is DesignOps?</h1>
+					<p>Giving design-involved people the <strong>tools, processes, artefacts, and support</strong> they need to make <strong>better things for users</strong>.</p>
+					<br>
+					<aside class="notes">
+						Testing private notes 📝
+					</aside>
+				</section>
+				<section data-fullscreen class="goLeft">
+					<h1>What is Design?</h1>
+					<p>Every decision made that might impact how somebody uses the thing.</p>
+					<br>
+					<aside class="notes">
+						Testing private notes 📝
+					</aside>
+				</section>
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h2>Things that can impact the UX</h2>
+						</div>
+						<div class="col">
+							<ul>
+								<li>Architecture design</li>
+								<li>Platform design</li>
+								<li>Integrations</li>
+								<li>DevOps stuff</li>
+								<li>Backend code</li>
+								<li>Frontend code</li>
+								<li>Service Experience</li>
+								<li>Product Experience</li>
+								<li>UI design</li>
+								<li>Visual design</li>
+								<li>Design to include all</li>
+								<li>Accessibility</li>
+								<li>Content Design</li>
+								<li>ResearchOps</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-fullscreen class="tjspacer">
+					<h1>No single practice can be responsible for the whole experience <br><br></h1>
+					<h1 class="fragment fade-up">No one person should/could know all of these practices <br><br></h1>
+					<h1 class="fragment fade-up">Each team probably won't have all those specialists</h1>
+				</section>
+				<section data-fullscreen class="tjspacer">
+					<h1>A <em>team</em> might not, but the Gov does. <br><br></h1>
+					<h1 class="fragment fade-up">How can we create something which provides a baseline for any missing skills?</h1>
+				</section>
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h2>A 'full-stack' Design System</h2>
+						</div>
+						<div class="col">
+							<ul>
+								<li>Consistent UX by default</li>
+								<li>Slice by component, not role</li>
+								<li>Benchmark consistent</li>
+								<li>Benchmark quality</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h2>Example: Asking for a user’s address</h2>
+						</div>
+						<div class="col">
+							<p>UI Design toolkit</p>
+							<ul>
+								<li>How the UI looks (Figma/Sketch/UXPin)</li>
+								<li>The code for a digital UI (HTML & CSS)</li>
+							</ul>
+							<p class="fragment fade-up">UI Dev toolkit</p>
+							<ul class="fragment fade-up">
+								<li>The code for a view-layer component (Vue/React)</li>
+								<li>The type-ahead mechanics (JS)</li>
+							</ul>
+							<p class="fragment fade-up">Full-stack & DevOps toolkit</p>
+							<ul class="fragment fade-up">
+								<li>API integration (JS)</li>
+								<li>App boilerplate</li>
+								<li>Cloud PaaS ready to deploy</li>
+								<li>The API itself (NSW Point/AusPost/Google)</li>
+							</ul>
+							<p class="fragment fade-up">Design Guidance</p>
+							<ul class="fragment fade-up">
+								<li>When it’s not ok to ask for an address</li>
+								<li>What people expect when they can’t answer</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h1>Outcome: Assurance that the thing is technically robust, usable, and made efficiently</h1>
+				</section>
+				<section>
+					<h1>…but things are more complicated in Gov’</h1>
+				</section>
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h2>1/3 modular design system</h2>
+						</div>
+						<div class="col">
+							<ul>
+								<li>Loosely-couple layers</li>
+								<li>Complimentary, but not co-dependent</li>
+								<li>Tech agnostic</li>
+								<li>Process agnostic</li>
+								<li>Don’t get attached to it</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h2>2/3 Flexible approach to adoption</h2>
+						</div>
+						<div class="col">
+							<ul>
+								<li>Culture change before tools</li>
+								<li>Release as an open Design System</li>
+								<li>Careful with the word ‘design’</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h2>3/3 Community support</h2>
+						</div>
+						<div class="col">
+							<ul>
+								<li>Evangelise outcomes</li>
+								<li>Provide a peer-to-peer platform</li>
+								<li>Build rapport</li>
+								<li>Offer help, not rules</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h1>Thank you! <br><br></h1>
+					<p>@tjharrop @jamesfehon <br><br></p>
+					<p>community.digital.nsw.gov.au</p>
 				</section>
 			</div>
 		</div>
