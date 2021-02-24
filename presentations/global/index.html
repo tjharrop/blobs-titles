@@ -6,12 +6,12 @@
 
 		<title>reveal.js</title>
 
-		<link rel="stylesheet" href="../global/dist/reset.css">
-		<link rel="stylesheet" href="../global/dist/reveal.css">
-		<link rel="stylesheet" href="../global/tjharrop-theme.css" id="theme">
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="tjharrop-theme.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="../global/plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
 
 		<style>
 			.blob {
@@ -23,16 +23,9 @@
 				right: -3%; top: 30%; transform: scale(11) rotateZ(29deg); background: rgb(252, 191, 73); border-radius: 52% 48% 56% 44% / 53% 56% 44% 47%; opacity: 1;
 			}
 
-			@media only screen and (max-width: 600px) {
-			  .blob {
-					width: 50px;
-					height: 50px;
-			  }
-			}
-
 			.headshot{
-			  background-image: url('assets/IMG_0899.JPG');
-				background-position: center;
+			  background-image: url('IMG_4477.JPG');
+				background-position: top;
 				background-size: cover;
 			  border-radius: 70% 30% / 30% 32% 68% 70%;
 			  width: 350px; height: 350px;
@@ -42,21 +35,6 @@
 			  will-change: border-radius;border: 3px solid rgba(0,0,0,0.6);
 			}
 
-			.goLeft {
-				padding:7%;
-				text-align: left;
-			}
-
-			.twocolumn {
-			   display: grid;
-			   grid-template-columns: 1fr 1fr;
-			   grid-gap: 10px;
-			   text-align: left;
-			 }
-
- 			.twocolumn .col {
-				padding:14%;
-			}
 
 			@keyframes morph{
 			  0%,100% {
@@ -80,62 +58,27 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-fullscreen class="goLeft">
-					<h1>Introduction</h1>
-					<br><br>
-					<h3>TJ Harrop</h3>
-					<p>Product Manager, NSW Digital Service Toolkit</p>
+				<section>
+					Introduction
 					<br>
-					<h3>James Fehon</h3>
-					<p>Community Manager, NSW Digital Service Toolkit</p>
-					<br>
-					<aside class="notes">
-						Testing private notes 📝
-					</aside>
+					<img class="headshot"></img>
 				</section>
-				<section data-fullscreen>
-					<div class="twocolumn">
-						<div class="col">
-							<h1>How I got into all this</h1>
-						</div>
-						<div class="col">
-							<ul>
-								<li>Masquerading as a dev</li>
-								<li>Got into UX</li>
-								<li>Got senior in UX</li>
-								<li>UX grew &amp; changed</li>
-								<li>Found my ❤️ in the gaps</li>
-							</ul>
-						</div>
-					</div>
-
-				</section>
-				<section data-fullscreen>
-					<h1>Slide 2</h1>
-					<div class="twocolumn">
-						<div class="col">
-							Column One
-						</div>
-						<div class="col">
-							Column Two
-						</div>
-					</div>
-				</section>
+				<section>Slide 2</section>
 			</div>
 		</div>
 		<div class="blob"></div>
 
-		<script src="../global/dist/reveal.js"></script>
-		<script src="../global/plugin/notes/notes.js"></script>
-		<script src="../global/plugin/markdown/markdown.js"></script>
-		<script src="../global/plugin/highlight/highlight.js"></script>
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
-		<script src="https://cdn.jsdelivr.net/gh/rajgoel/reveal.js-plugins/fullscreen/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js" integrity="sha512-yocoLferfPbcwpCMr8v/B0AB4SWpJlouBwgE0D3ZHaiP1nuu5djZclFEIj9znuqghaZ3tdCMRrreLoM8km+jIQ==" crossorigin="anonymous"></script>
 		<script>
 			Reveal.initialize({
 				hash: true,
-				transition: 'none',
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealFullscreen ]
+				transition: 'fade',
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			}).then( () => {
 			  // generateBlob();
 			} );

@@ -9,7 +9,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 :root {
   --background-color: #EDEDF3;
   --main-font: 'IBM Plex Mono', monospace;
-  --main-font-size: 42px;
+  --main-font-size: 30px;
   --main-color: #222;
   --block-margin: 20px;
   --heading-margin: 0 0 20px 0;
@@ -21,16 +21,16 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   --heading-text-shadow: none;
   --heading-font-weight: 600;
   --heading1-text-shadow: none;
-  --heading1-size: 2.5em;
-  --heading2-size: 1.6em;
-  --heading3-size: 1.3em;
-  --heading4-size: 1em;
+  --heading1-size: 180%;
+  --heading2-size: 130%;
+  --heading3-size: 110%;
+  --heading4-size: 100%;
   --controls-color: #000;
   --code-font: monospace;
   --link-color: #2a76dd;
   --link-color-hover: #6ca0e8;
-  --selection-background-color: #98bdef;
-  --selection-color: #fff; }
+  --selection-background-color: rgb(252, 191, 73);
+  --selection-color: #000; }
 
 .reveal-viewport {
   background: var(--background-color);
@@ -38,9 +38,9 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 
 .reveal {
   font-family: var(--main-font);
-  font-size: 42px;
+  font-size: var(--main-font-size);
   font-weight: normal;
-  color: #222; }
+  color: var(--main-color); }
 
 .reveal ::selection {
   color: var(--selection-color);
@@ -60,43 +60,43 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 /*********************************************
  * HEADERS
  *********************************************/
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
+.reveal section h1,
+.reveal section h2,
+.reveal section h3,
+.reveal section h4,
+.reveal section h5,
+.reveal section h6 {
   margin: var(--heading-margin);
   color: var(--heading-color);
   font-family: var(--heading-font);
   font-weight: var(--heading-font-weight);
   line-height: var(--heading-line-height);
   letter-spacing: var(--heading-letter-spacing);
-  text-transform: uppercase;
   text-shadow: none;
   word-wrap: break-word; }
 
-.reveal h1 {
+.reveal section h1 {
   font-size: var(--heading1-size); }
 
-.reveal h2 {
+.reveal section h2 {
   font-size: var(--heading2-size); }
 
-.reveal h3 {
+.reveal section h3 {
   font-size: var(--heading3-size); }
 
-.reveal h4 {
+.reveal section h4 {
   font-size: var(--heading4-size); }
 
-.reveal h1 {
+.reveal section h1 {
   text-shadow: none; }
 
 /*********************************************
  * OTHER
  *********************************************/
-.reveal p {
+.reveal p, .reveal li {
   margin: 20px 0;
-  line-height: 1.3; }
+  line-height: 1.3;
+  font-size: 80%; }
 
 /* Remove trailing margins after titles */
 .reveal h1:last-child,
@@ -280,7 +280,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   transition: all .15s linear; }
 
 .reveal a:hover .r-frame {
-  border-color: #2a76dd;
+  border-color: var(--link-color);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
@@ -294,7 +294,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
  *********************************************/
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
-  color: #2a76dd; }
+  color: var(--link-color); }
 
 /*********************************************
  * PRINT BACKGROUND
