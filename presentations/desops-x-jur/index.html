@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="viewport" content="width=device-width, initial-scale=0.3, maximum-scale=0.3, user-scalable=no">
 
 		<title>DesignOps in gov'</title>
 
@@ -42,9 +42,11 @@
 			  will-change: border-radius;border: 3px solid rgba(0,0,0,0.6);
 			}
 
-			.tjspacer {
-				max-width: 90%;
-				max-height: 90%;
+			@media only screen and (min-width: 600px) {
+				.tjspacer {
+					max-width: 90%;
+					max-height: 90%;
+			}
 			}
 
 			.goLeft {
