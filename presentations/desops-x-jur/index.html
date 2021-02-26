@@ -3,16 +3,12 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.3, maximum-scale=0.3, user-scalable=no">
-
 		<title>DesignOps in gov'</title>
-
 		<link rel="stylesheet" href="../global/dist/reset.css">
 		<link rel="stylesheet" href="../global/dist/reveal.css">
 		<link rel="stylesheet" href="../global/tjharrop-theme.css" id="theme">
-
-		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../global/theme-addons.css">
 		<link rel="stylesheet" href="../global/plugin/highlight/monokai.css" id="highlight-theme">
-
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-50VW3L5BTW"></script>
 		<script>
 		  window.dataLayer = window.dataLayer || [];
@@ -20,78 +16,6 @@
 		  gtag('js', new Date());
 		  gtag('config', 'G-50VW3L5BTW');
 		</script>
-
-		<style>
-			.blob {
-				position: absolute;
-				width: 200px;
-				height: 200px;
-				transition: all .7s ease-in-out;
-				/* Default styling */
-				right: -3%; top: 30%; transform: scale(11) rotateZ(29deg); background: rgb(252, 191, 73); border-radius: 52% 48% 56% 44% / 53% 56% 44% 47%; opacity: 1;
-			}
-
-			@media only screen and (max-width: 600px) {
-			  .blob {
-					width: 50px;
-					height: 50px;
-			  }
-			}
-
-			.headshot{
-			  background-image: url('assets/IMG_0899.JPG');
-				background-position: center;
-				background-size: cover;
-			  border-radius: 70% 30% / 30% 32% 68% 70%;
-			  width: 350px; height: 350px;
-			  animation: morph 40s ease-in-out infinite;
-			  transform-style: preserve-3d;
-			  outline: 1px solid transparent;
-			  will-change: border-radius;border: 3px solid rgba(0,0,0,0.6);
-			}
-
-			@media only screen and (min-width: 600px) {
-				.tjspacer {
-					max-width: 90%;
-					margin: 0 5%;
-				}
-			}
-
-			.goLeft {
-				padding:7%;
-				text-align: left;
-				max-width: 900px;
-			}
-
-			.twocolumn {
-			   display: grid;
-			   grid-template-columns: 1fr 1fr;
-			   grid-gap: 10px;
-			   text-align: left;
-			 }
-
- 			.twocolumn .col {
-				padding:14%;
-			}
-
-			@keyframes morph{
-			  0%,100% {
-			    border-radius: 70% 30% / 30% 32% 68% 70%;
-			  }
-			  20% {
-			    border-radius: 62% 38% 34% 66% / 29% 28% 72% 71%;
-			  }
-			  40% {
-			    border-radius: 27% 73% 34% 66% / 47% 34% 66% 53%;
-			  }
-			  60% {
-			    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
-			  }
-			  80% {
-			    border-radius: 59% 41% 40% 60% / 60% 34% 66% 40%;
-			  }
-			}
-		</style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -304,50 +228,6 @@
 		<script src="../global/plugin/highlight/highlight.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
 		<script src="https://cdn.jsdelivr.net/gh/rajgoel/reveal.js-plugins/fullscreen/plugin.js"></script>
-		<script>
-			Reveal.initialize({
-				hash: true,
-				transition: 'none',
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealFullscreen ]
-			}).then( () => {
-			  // generateBlob();
-			} );
-
-			Reveal.on( 'slidechanged', event => {
-				generateBlob();
-			} );
-
-			document.addEventListener("keydown", event => {
-			  if (event.keyCode === 71) {
-			    generateBlob();
-			  }
-			});
-
-			function generateBlob() {
-				const colors = ["#D45B52","#829C92","#61A4B8","#E8C75C","#B5A496","#E8865E","#E38A85","#519DD8","#88D4D8", "#7B9C90","#D65C83","#FCBF49","#33E4FF","#F66C51","#33C1B1"];
-				const rand = Math.floor(Math.random()*colors.length);
-
-			  const percentage1 = _.random(20, 75);
-			  const percentage2 = _.random(30, 95);
-				const percentage3 = _.random(18, 60);
-			  const percentage4 = _.random(25, 75);
-				var percentage11 = 100 - percentage1;
-			  var percentage21 = 100 - percentage2;
-			  var percentage31 = 100 - percentage3;
-			  var percentage41 = 100 - percentage4;
-			  var borderRadius = `${percentage1}% ${percentage11}% ${percentage21}% ${percentage2}% / ${percentage3}% ${percentage4}% ${percentage41}% ${percentage31}%`;
-
-				const top = _.random(-25, 85); //top
-				const right = _.random(-20, 10); //right
-				const rotate = _.random(0, 180); //rotate
-				const zoom = _.random(5, 12);
-
-				document.querySelector('.blob').style.right = `${right}%`
-				document.querySelector('.blob').style.top = `${top}%`
-				document.querySelector('.blob').style.transform =  `scale(${zoom}) rotateZ(${rotate}deg)`
-				document.querySelector('.blob').style.background =  colors[rand]
-			  document.querySelector('.blob').style.borderRadius = borderRadius
-			}
-		</script>
+		<script src="../global/blob-maker.js"></script>
 	</body>
 </html>

@@ -3,111 +3,472 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<title>reveal.js</title>
-
+		<title>DesignOps in challenging environments</title>
 		<link rel="stylesheet" href="../global/dist/reset.css">
 		<link rel="stylesheet" href="../global/dist/reveal.css">
 		<link rel="stylesheet" href="../global/tjharrop-theme.css" id="theme">
-
-		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
 		<link rel="stylesheet" href="../global/plugin/highlight/monokai.css" id="highlight-theme">
-
-		<style>
-			.blob {
-				position: absolute;
-				width: 200px;
-				height: 200px;
-				transition: all .7s ease-in-out;
-				/* Default styling */
-				right: -3%; top: 30%; transform: scale(11) rotateZ(29deg); background: rgb(252, 191, 73); border-radius: 52% 48% 56% 44% / 53% 56% 44% 47%; opacity: 1;
-			}
-
-			@media only screen and (max-width: 600px) {
-			  .blob {
-					width: 50px;
-					height: 50px;
-			  }
-			}
-
-			.headshot{
-			  background-image: url('assets/IMG_0899.JPG');
-				background-position: center;
-				background-size: cover;
-			  border-radius: 70% 30% / 30% 32% 68% 70%;
-			  width: 350px; height: 350px;
-			  animation: morph 40s ease-in-out infinite;
-			  transform-style: preserve-3d;
-			  outline: 1px solid transparent;
-			  will-change: border-radius;border: 3px solid rgba(0,0,0,0.6);
-			}
-
-			.twocolumn {
-			   display: grid;
-			   grid-template-columns: 1fr 1fr;
-			   grid-gap: 10px;
-			   text-align: left;
-			 }
-
- 			.twocolumn .col {
-				padding:15%;
-			}
-
-			@keyframes morph{
-			  0%,100% {
-			    border-radius: 70% 30% / 30% 32% 68% 70%;
-			  }
-			  20% {
-			    border-radius: 62% 38% 34% 66% / 29% 28% 72% 71%;
-			  }
-			  40% {
-			    border-radius: 27% 73% 34% 66% / 47% 34% 66% 53%;
-			  }
-			  60% {
-			    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
-			  }
-			  80% {
-			    border-radius: 59% 41% 40% 60% / 60% 34% 66% 40%;
-			  }
-			}
-		</style>
+		<link rel="stylesheet" href="../global/theme-addons.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h2>Introduction</h2>
+					<h1>'ey up! 👋</h1>
 					<br>
 					<img class="headshot"></img>
+					<aside class="notes">
+						Hello I'm TJ
+					</aside>
 				</section>
+
 				<section data-fullscreen>
 					<div class="twocolumn">
 						<div class="col">
-							<h1>How I got into all this</h1>
+							<h2>Sorry, who?</h2>
 						</div>
 						<div class="col">
 							<ul>
-								<li>Masquerading as a dev</li>
-								<li>Got into UX</li>
-								<li>Got senior in UX</li>
-								<li>UX grew &amp; changed</li>
-								<li>Found my ❤️ in the gaps</li>
+								<li>NSW Design System Product Manager</li>
+								<li>🐛 DS ➡️ 🦋 DesignOps</li>
+								<li>GOV.UK alumni</li>
+								<li>IxD/UXer</li>
+								<li>Born-again coder</li>
 							</ul>
 						</div>
 					</div>
-
+					<aside class="notes">
+						<ul>
+							<li>Quick intro</li>
+							<li>Currently PM of the NSW Gov Design System
+								<ul>
+									<li>A DS for all of the NSW Government</li>
+									<li>Not the only one!</li>
+									<li>Not a central design owner team</li>
+								</ul>
+							</li>
+							<li>Part of a wider team moving from UI Kits to full DesignOps</li>
+							<li>Before that:
+								<ul>
+									<li>Interaction Designer at the Home Office</li>
+									<li>Background in UX and Interaction Design</li>
+									<li>Also enjoy (really) coding</li>
+									<li>Been around UX for about 15 years</li>
+								</ul>
+							</li>
+						</ul>
+					</aside>
 				</section>
+
 				<section data-fullscreen>
-					<h1>Slide 2</h1>
 					<div class="twocolumn">
 						<div class="col">
-							Column One
+							<h2>Getting into DesignOps</h2>
+							<br><br>
+							<p>Some battle stories from an old man 👴🏻</p>
 						</div>
 						<div class="col">
-							Column Two
+							<p>Never found the right fit between:</p>
+							<ul>
+								<li>UI dev</li>
+								<li>UX design</li>
+								<li>Service Design</li>
+								<li>Mastering scrums</li>
+								<li>Managing design teams</li>
+							</ul>
+							<p>Found my ❤️ helping others fill the gaps between those things.</p>
+						</div>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>Tried many jobs</li>
+							<li>Enjoyed everything, but wanted to mix things</li>
+							<li>Special power: HATING NASTY PROCESSES</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<p><em><small>Nice origin story, friend, but...</small></em></p>
+					<h4>What are we talking about today?</h4>
+					<br><br>
+					<h1 class="fragment">DesignOps in challenging environments</h1>
+				</section>
+
+				<section data-fullscreen class="goLeft">
+					<h1>What is DesignOps?</h1>
+					<p class="fragment">Giving people in design the <strong>tools, processes, artefacts, and support</strong> they need to make <strong>better things for users</strong>.</p>
+					<br>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section>
+					<h1><em><strong>People in design</strong></em> might include people not called 'designer'</h1>
+				</section>
+
+				<section>
+					<h1><span class="fragment">Let's</span> <span class="fragment">get</span> <span class="fragment shake-constant shake-hard">existential!</span></h1>
+				</section>
+
+				<section data-fullscreen class="goLeft">
+					<h1>What is Design?</h1>
+					<p class="fragment">Every decision made that might impact the finished thing.</p>
+					<br>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h2>Things that can impact the UX</h2>
+						</div>
+						<div class="col">
+							<ul>
+								<li>Architecture design</li>
+								<li>Platform design</li>
+								<li>Integrations</li>
+								<li>DevOps stuff</li>
+								<li>Backend code</li>
+								<li>Frontend code</li>
+								<li>Service Experience</li>
+								<li>Product Experience</li>
+								<li>UI design</li>
+								<li>Visual design</li>
+								<li>Design to include all</li>
+								<li>Accessibility</li>
+								<li>Content Design</li>
+								<li>ResearchOps</li>
+							</ul>
 						</div>
 					</div>
 				</section>
+
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h2>What we know so far</h2>
+						</div>
+						<div class="col">
+							<p class="fragment">
+								🤙 DesignOps exists to make life easy
+							</p>
+							<p class="fragment">
+								👯‍♀️ DesignOps is your friend
+							</p>
+							<p class="fragment">
+								⏱ DesignOps saves time
+							</p>
+							<p class="fragment">
+								🦆 DesignOps is for everyone
+							</p>
+						</div>
+						<div class="col">
+							<h2 class="fragment">What we don't know</h2>
+						</div>
+						<div class="col">
+							<p class="fragment">
+								🤷🏻‍♂️ How it does that
+							</p>
+						</div>
+						<aside class="notes">
+							Notes 📝
+						</aside>
+					</div>
+				</section>
+
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h3 class="fragment">1/ Design strategy</h3>
+							<h3 class="fragment">2/ Processes</h3>
+							<h3 class="fragment">3/ Tools</h3>
+							<h3 class="fragment">4/ Community &amp; Culture</h3>
+						</div>
+						<div class="col">
+							<p class="fragment">... needs ownership</p>
+								<p class="fragment">... need org seniority</p>
+								<p class="fragment">... need practice seniority</p>
+								<p class="fragment">... needs people seniority</p>
+						</div>
+					</div>
+					<aside class="notes">
+						<small>
+							Design Strategy - how the org approaches design
+							<br>
+							Processes - how design happens
+							<br>
+							Tools - what people use (usually tied in to the process)
+							<br>
+							Community - how we know, support, lift, and share with each other
+						</small>
+					</aside>
+				</section>
+
+				<section data-fullscreen>
+					<p class=""><strong>Reality:</strong> Most of us don't have that, most of us work in...</p>
+				</section>
+
+				<section class="confetti">
+					<h2> 🎊 Challenging environments 🎊</h2>
+				</section>
+
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h2>Challenging environments</h2>
+							<br><br>
+							<img class="block-shadow" src="https://media.giphy.com/media/XAa0QJ3sZXO3P3ppsO/source.gif" width="480" height="300" >
+						</div>
+						<div class="col">
+							<p>❌ Not always this:</p>
+							<ul class="fragment">
+								<li>Anti-design nasties</li>
+								<li>Low-designer ratio</li>
+							</ul>
+							<p class="fragment">✅ Can be this:</p>
+							<ul class="fragment">
+								<li>Distributed design ownership</li>
+								<li>Inconsistent definiton of design</li>
+								<li>Inconsistent skills</li>
+								<li>Multi-brand org</li>
+								<li>Multi-org brand</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section data-fullscreen>
+					<h1><br>1/ Design Strategy</h1>
+					<div class="twocolumn">
+						<div class="col">
+							<h3>In an ideal world...<br><br></h3>
+							<p class="fragment">Designers own design<br><br></p>
+							<p class="fragment">Sign-off based on patterns<br><br></p>
+							<p class="fragment">Designers hire designers<br><br></p>
+							<p class="fragment">Common 'shape' of a designer 🚨<br><br></p>
+							<p class="fragment">Exec designers<br><br></p>
+						</div>
+						<div class="col">
+							<h3 class="fragment">In reality...<br><br></h3>
+							<p class="fragment">Design ownership is localised and siloed<br><br></p>
+							<p class="fragment">Sign-off is subjective<br><br></p>
+							<p class="fragment">PMs hire designers<br><br></p>
+							<p class="fragment">Designers come in many forms<br><br></p>
+							<p class="fragment">Execs are not designers<br><br></p>
+						</div>
+					</div>
+				</section>
+
+				<section data-fullscreen>
+					<h1><br>1/ Design Strategy</h1>
+					<div class="twocolumn">
+						<div class="col">
+							<h3>What we can do</h3>
+
+						</div>
+						<div class="col">
+							<p class="fragment">Accept that the unlearned aren't nay-sayers<br><br></p>
+							<p class="fragment">Talk about it in terms of <em>their</em> benefit
+								<ul class="fragment">
+									<li>Efficiency, for PMs</li>
+									<li>Assurance, for sign-off</li>
+								</ul>
+								<br><br>
+							</p>
+							<p class="fragment">Buddy up with other units<br><br></p>
+							<p class="fragment">Build a network of evangelists<br><br></p>
+						</div>
+					</div>
+					<aside class="notes">
+						Do everything to get in to the strategy and approach that already exists within a team, potentially buddying up
+						<br>HR is an example of something frequently centralised
+					</aside>
+				</section>
+
+				<section data-fullscreen>
+					<h1><br>2/ Processes &amp; 3/ Tools</h1>
+					<div class="twocolumn">
+						<div class="col">
+							<h3>In an ideal world...<br><br></h3>
+							<p class="fragment">Designers create a process<br><br></p>
+							<p class="fragment">Tools are available to support it<br><br></p>
+							<p class="fragment">Designers &amp; devs line-up similarly<br><br></p>
+							<p class="fragment">Funding tools is centralised<br><br></p>
+							<p class="fragment">Non-designers approach DesignOps<br><br></p>
+						</div>
+						<div class="col">
+							<h3 class="fragment">In reality...<br><br></h3>
+							<p class="fragment">Processes &amp; tools are localised and siloed<br><br></p>
+							<p class="fragment">There's a tool for everything<br><br></p>
+							<p class="fragment">Designers &amp; devs differ<br><br></p>
+							<p class="fragment basic-canon">Funding is centralised!<br><br></p>
+							<p class="fragment">People think it's just for deisngers<br><br></p>
+						</div>
+					</div>
+					<aside class="notes">
+
+					</aside>
+				</section>
+
+				<section data-fullscreen>
+					<h1><br>2/ Processes &amp; 3/ Tools</h1>
+					<div class="twocolumn">
+						<div class="col">
+							<h3>What we can do<br><br></h3>
+						</div>
+						<div class="col">
+							<p>Change culture first<br><br></p>
+							<p>Be humbly reactive<br><br></p>
+							<p>Talk about benefits, not the thing<br><br></p>
+							<p>Create a full-stack design system<br><br></p>
+						</div>
+					</div>
+				</section>
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h2>Things that can impact the UX</h2>
+						</div>
+						<div class="col">
+							<ul>
+								<li>Architecture design</li>
+								<li>Platform design</li>
+								<li>Integrations</li>
+								<li>DevOps stuff</li>
+								<li>Backend code</li>
+								<li>Frontend code</li>
+								<li>Service Experience</li>
+								<li>Product Experience</li>
+								<li>UI design</li>
+								<li>Visual design</li>
+								<li>Design to include all</li>
+								<li>Accessibility</li>
+								<li>Content Design</li>
+								<li>ResearchOps</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-fullscreen class="tjspacer">
+					<h1>No single practice can be responsible for the whole experience <br><br></h1>
+					<h1 class="fragment fade-up">No one person should/could know all of these practices <br><br></h1>
+					<h1 class="fragment fade-up">Each team probably won't have all those specialists</h1>
+				</section>
+
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h2>A 'full-stack' Design System</h2>
+						</div>
+						<div class="col">
+							<ul>
+								<li>Consistent UX by default</li>
+								<li>Slice by component, not role</li>
+								<li>Doesn't rely on a specific type of designer</li>
+								<li>or dev</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h2>Example: Asking for a user’s address</h2>
+						</div>
+						<div class="col">
+							<p>UI Design toolkit</p>
+							<ul>
+								<li>How the UI looks (Figma/Sketch/UXPin)</li>
+								<li>The code for a digital UI (HTML & CSS)</li>
+							</ul>
+							<p class="fragment fade-up">UI Dev toolkit</p>
+							<ul class="fragment fade-up">
+								<li>The code for a view-layer component (Vue/React)</li>
+								<li>The type-ahead mechanics (JS)</li>
+							</ul>
+							<p class="fragment fade-up">Full-stack & DevOps toolkit</p>
+							<ul class="fragment fade-up">
+								<li>API integration (JS)</li>
+								<li>App boilerplate</li>
+								<li>Cloud PaaS ready to deploy</li>
+								<li>The API itself (NSW Point/AusPost/Google)</li>
+							</ul>
+							<p class="fragment fade-up">Design Guidance</p>
+							<ul class="fragment fade-up">
+								<li>When it’s not ok to ask for an address</li>
+								<li>What people expect when they can’t answer</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h1>Outcome: A common language - processes will naturally fall in-line</h1>
+				</section>
+
+				<section data-fullscreen>
+					<h1><br>4/ Community &amp; Culture</h1>
+					<div class="twocolumn">
+						<div class="col">
+							<h3>In an ideal world...<br><br></h3>
+							<p class="fragment">Designers know each other<br><br></p>
+							<p class="fragment">Designers share stuff<br><br></p>
+							<p class="fragment">Designers agree with each other<br><br></p>
+						</div>
+						<div class="col">
+							<h3 class="fragment">In reality...<br><br></h3>
+							<p class="fragment">Designers are hidden in cupboards<br><br></p>
+							<p class="fragment">It's hard to share between different tools<br><br></p>
+							<p class="fragment">DESIGNERS LOVE WAR<br><br><img class="block-shadow" src="https://media.giphy.com/media/2z6x8UzzCdBBu/source.gif" width="480" height="300" ></p>
+						</div>
+					</div>
+					<aside class="notes">
+
+					</aside>
+				</section>
+
+				<section data-fullscreen>
+					<h1><br>4/ Community &amp; Culture</h1>
+					<div class="twocolumn">
+						<div class="col">
+							<h3>What we can do<br><br></h3>
+						</div>
+						<div class="col">
+							<p>Provide a platform<br><br></p>
+							<p>Have meetups<br><br></p>
+							<p>Start with what you can do *now*<br><br></p>
+							<p>Embrace differences 🤗<br><br></p>
+						</div>
+					</div>
+				</section>
+
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h3>Summary<br><br></h3>
+						</div>
+						<div class="col">
+							<p>Outcome focussed frameworks over processes<br><br></p>
+							<p>DesignOps can be facilitating well designed things, not facilitating designers<br><br></p>
+							<p>DesignOps as a concept might be an easier sell than as a specific<br><br></p>
+							<p>Facilitate direct communication<br><br></p>
+							<p>Embrace the diversity of approach<br><br></p>
+						</div>
+					</div>
+				</section>
+
+				<section class="fireworks blobtastic">
+					<h1>Thank you! <br><br></h1>
+					<p><i class="fab fa-twitter"></i> <i class="fab fa-medium"></i> @tjharrop<br><br></p>
+					<p>tjharrop.com<br><br></p>
+					<p><i class="fab fa-linkedin"></i> linkedin.com/in/tjharrop</p>
+				</section>
+
 			</div>
 		</div>
 		<div class="blob"></div>
@@ -118,50 +479,10 @@
 		<script src="../global/plugin/highlight/highlight.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
 		<script src="https://cdn.jsdelivr.net/gh/rajgoel/reveal.js-plugins/fullscreen/plugin.js"></script>
+		<script src="../global/blob-maker.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.3/dist/confetti.browser.min.js"></script>
+
 		<script>
-			Reveal.initialize({
-				hash: true,
-				transition: 'none',
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealFullscreen ]
-			}).then( () => {
-			  // generateBlob();
-			} );
-
-			Reveal.on( 'slidechanged', event => {
-				generateBlob();
-			} );
-
-			document.addEventListener("keydown", event => {
-			  if (event.keyCode === 71) {
-			    generateBlob();
-			  }
-			});
-
-			function generateBlob() {
-				const colors = ["#D45B52","#829C92","#61A4B8","#E8C75C","#B5A496","#E8865E","#E38A85","#519DD8","#88D4D8", "#7B9C90","#D65C83","#FCBF49","#33E4FF","#F66C51","#33C1B1"];
-				const rand = Math.floor(Math.random()*colors.length);
-
-			  const percentage1 = _.random(20, 75);
-			  const percentage2 = _.random(30, 95);
-				const percentage3 = _.random(18, 60);
-			  const percentage4 = _.random(25, 75);
-				var percentage11 = 100 - percentage1;
-			  var percentage21 = 100 - percentage2;
-			  var percentage31 = 100 - percentage3;
-			  var percentage41 = 100 - percentage4;
-			  var borderRadius = `${percentage1}% ${percentage11}% ${percentage21}% ${percentage2}% / ${percentage3}% ${percentage4}% ${percentage41}% ${percentage31}%`;
-
-				const top = _.random(-25, 85); //top
-				const right = _.random(-20, 10); //right
-				const rotate = _.random(0, 180); //rotate
-				const zoom = _.random(5, 12);
-
-				document.querySelector('.blob').style.right = `${right}%`
-				document.querySelector('.blob').style.top = `${top}%`
-				document.querySelector('.blob').style.transform =  `scale(${zoom}) rotateZ(${rotate}deg)`
-				document.querySelector('.blob').style.background =  colors[rand]
-			  document.querySelector('.blob').style.borderRadius = borderRadius
-			}
 		</script>
 	</body>
 </html>
