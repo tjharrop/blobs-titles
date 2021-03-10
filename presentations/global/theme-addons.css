@@ -85,5 +85,17 @@
   display: flex !important;
   align-items: center;
   justify-content: center;
+  width: 100%;
+}
+.full-cover {
+  height:100%;
+  background-size: contain;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .white-box {background: #fff; padding: 1rem;}
