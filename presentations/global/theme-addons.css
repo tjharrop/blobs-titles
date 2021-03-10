@@ -71,3 +71,19 @@
 .block-shadow {
   box-shadow: 4px 4px;
 }
+
+.centre-text {
+  text-align: center;
+}
+
+.flip-horizontally {
+  transform: scaleX(-1);
+}
+.cover {
+  height:100%;
+  background-size: cover;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+.white-box {background: #fff; padding: 1rem;}
