@@ -15,6 +15,8 @@
     "https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif",
     "https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif",
     "https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif",
+    "https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif",
+    "https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif",
     "https://media.giphy.com/media/l4Ep3mmmj7Bw3adWw/giphy.gif",
     "https://media.giphy.com/media/gjgWQA5QBuBmUZahOP/source.gif",
     "https://media.giphy.com/media/fpbqdKRPRkd56/source.gif",
@@ -36,6 +38,10 @@
     "https://media.giphy.com/media/giciEsIFsWKTLKMRgZ/source.gif",
     "https://media.giphy.com/media/35HTaxVJWzp2QOShct/source.gif",
     "https://media.giphy.com/media/3o6wrvsYfacWLN681y/giphy.gif",
+    "https://media.giphy.com/media/phY1SBXy4y4Io/source.gif",
+    "https://media.giphy.com/media/JRbLvZ2JWqU9F4DDTO/source.gif",
+    "https://media.giphy.com/media/tOfszUx9P6jLO/source.gif",
+    "https://media.giphy.com/media/Myj405ypuexpu/source.gif",
     "https://media.giphy.com/media/hlWNWCuAuOVEs/source.gif"]
 
     function changeImage()
@@ -49,6 +55,8 @@
         img.style.backgroundColor = "black"
       }
     }
+
+
 
     document.addEventListener("keydown", event => {
       if (event.keyCode === 83) { // show on s
@@ -72,9 +80,16 @@
     }
 
     window.onload = function(e) {
-      document.getElementById("bgvid").addEventListener('ended', myHandler, false);
-      videoPlay(videoCount); // play the video
-
+      document.querySelector("h2").addEventListener("click", function() {
+        document.getElementById("img").style.visibility = "visible";
+        document.querySelector("h1").style.visibility = "visible";
+        document.querySelector("h2").style.display = "none";
+        document.getElementById("bgvid").addEventListener('ended', myHandler, false);
+        videoPlay(videoCount); // play the video
+        display = document.querySelector('#time');
+        startTimer(167, display); // both = 366, FBS = 199, MR = 167
+        setInterval(function(){ changeImage(); }, 3000);
+      });
     }
 
     function myHandler() {
@@ -86,34 +101,61 @@
         }
     }
 
+    function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    var goTimer = setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (timer < 6) {
+            display.classList.remove("white-box");
+            display.classList.remove("block-shadow");
+            display.classList.add("block-text");
+        }
+
+        if (--timer < 0) {
+            display.classList.add("blinkVis");
+            clearInterval(goTimer);
+        }
+    }, 1000);
+}
+
   </script>
   <style>
   iframe {position: absolute; bottom: 50px; right: 50px;}
-  #bgvid {  position: fixed;
+  #bgvid {  position: absolute; display: block;
   right: 0;
   bottom: 0;
-  min-width: 100%;
-  min-height: 100%;}
+    object-fit: contain;
+  width: 100%;
+  height: 100%;}
   * {
   box-sizing: border-box;
 }
 body {  background-color: #000;
 }
+h1 {visibility: hidden;}
   </style>
 </head>
 <body>
-  <video id="bgvid"></video>
+  <video id="bgvid" muted></video>
   <div class="full-cover reveal" id="img">
     <div>
       <!-- <p><img src="../global/assets/tj.png"><br><br></p> -->
-      <h1 class="white-box block-shadow centre-text">
+      <h1 class="white-box block-shadow centre-text" id="time">
         starting soon
       </h1>
+      <h2 class="white-box block-shadow centre-text">
+        Start waiting room
+      </h2>
     </div>
   </div>
   <script>
-    changeImage();
-    setInterval(function(){ changeImage(); }, 3000);
   </script>
 </body>
 </html>
