@@ -67,11 +67,12 @@
       }
     });
 
+    var totalTime = 0;
     var videoSource = new Array();
-    videoSource[0] = 'https://files.tjharrop.com/bgvid.mp4';
-    //videoSource[1] = 'https://files.tjharrop.com/woc-s.mp4';
+    //videoSource.push('https://files.tjharrop.com/mr.mp4'); totalTime += 167;
+    //videoSource.push('https://files.tjharrop.com/woc-s.mp4'); totalTime += 199;
+    videoSource.push('https://files.tjharrop.com/lonely.mp4'); totalTime += 195;
     var videoCount = videoSource.length - 1;
-
     function videoPlay(videoNum) {
         document.getElementById("bgvid").setAttribute("src", videoSource[videoNum]);
         document.getElementById("bgvid").load();
@@ -87,7 +88,7 @@
         document.getElementById("bgvid").addEventListener('ended', myHandler, false);
         videoPlay(videoCount); // play the video
         display = document.querySelector('#time');
-        startTimer(167, display); // both = 366, FBS = 199, MR = 167
+        startTimer(totalTime, display);
         setInterval(function(){ changeImage(); }, 3000);
       });
     }
