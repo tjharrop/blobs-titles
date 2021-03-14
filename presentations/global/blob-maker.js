@@ -155,3 +155,9 @@ function confettiFireworks() {
     confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }, colors: brightColors }));
   }, 250);
 }
+
+function gifCycle(img,gifList)
+{
+  var rand = Math.floor(Math.random()*gifList.length);
+  img.src = gifList[rand];
+}
