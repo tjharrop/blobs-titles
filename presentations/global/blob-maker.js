@@ -11,6 +11,9 @@ Reveal.initialize({
 
 Reveal.on( 'slidechanged', event => {
   generateBlob();
+  if ( event.currentSlide.getAttribute("data-playaudio") ){
+    playaudio(event.currentSlide.getAttribute("data-playaudio"));
+  }
   if ( event.currentSlide.className.includes("confetti") ){
     confettiMachine();
   }
@@ -160,4 +163,9 @@ function gifCycle(img,gifList)
 {
   var rand = Math.floor(Math.random()*gifList.length);
   img.src = gifList[rand];
+}
+
+function playaudio(file) {
+  var audio = new Audio(file);
+  audio.play();
 }
