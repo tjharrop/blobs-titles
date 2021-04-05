@@ -1,0 +1,58 @@
+@media only screen and (min-width: 600px) {
+  .tjspacer {
+    max-width: 90%;
+    margin: 0 5%;
+  }
+}
+
+.goLeft {
+  padding:7%;
+  text-align: left;
+  max-width: 900px;
+}
+
+.twocolumn {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-gap: 10px;
+   text-align: left;
+ }
+
+.twocolumn .col {
+  padding:14%;
+}
+
+.flexcolumn {
+   display: flex;
+ }
+ .flexcolumn .col {
+    flex: 1;
+    padding: 20px;
+  }
+
+.centre-text {
+  text-align: center;
+}
+
+.flip-horizontally {
+  transform: scaleX(-1);
+}
+.cover {
+  height:100%;
+  background-size: cover;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.full-cover {
+  height:100%;
+  background-size: contain;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
