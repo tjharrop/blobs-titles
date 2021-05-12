@@ -9,13 +9,14 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
  *********************************************/
 :root {
   --background-color: #F4F4F7;
+  --nsw-light: #F4F4F7;
   --nsw-blue: #002664;
   --nsw-red: #D7153A;
   --nsw-purple: #752F8A;
   --nsw-grey: #4C4F55;
   --main-font: 'GothamPro', 'Montserrat', arial, sans-serif;
   --main-font-size: 30px;
-  --main-color: #222;
+  --main-color: #002664;
   --dark-theme-main-color: white;
   --block-margin: 20px;
   --heading-margin: 0 0 20px 0;

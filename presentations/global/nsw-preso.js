@@ -1,3 +1,6 @@
+const colors = ["#D45B52","#829C92","#61A4B8","#E8C75C","#B5A496","#E38A85","#519DD8","#88D4D8", "#7B9C90","#D65C83","#FCBF49","#33E4FF","#F66C51","#33C1B1"];
+const brightColors = ["#FF2222","#E8C75C","#519DF8","#88D4D8","#FCBF49","#33E4FF","#FF6C51","#33C1B1"];
+
 Reveal.initialize({
   hash: true,
   transition: 'none',

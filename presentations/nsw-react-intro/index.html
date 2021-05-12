@@ -1,0 +1,346 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>NSW Design System react components intro</title>
+		<link rel="stylesheet" href="../global/dist/reset.css">
+		<link rel="stylesheet" href="../global/dist/reveal.css">
+		<link rel="stylesheet" href="../global/nsw-theme.css" id="theme">
+		<link rel="stylesheet" href="../global/nsw-addons.css">
+		<link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
+		<link rel="stylesheet" href="../global/plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+		<script src="../global/plugin/notes/notes.js"></script>
+		<script src="../global/plugin/markdown/markdown.js"></script>
+		<script src="../global/plugin/highlight/highlight.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/rajgoel/reveal.js-plugins/fullscreen/plugin.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.3/dist/confetti.browser.min.js"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="">
+					<h2 class="fragment fade-in-then-semi-out" data-fragment-index="1"><span class="fragment strike" data-fragment-index="2">Digital Design System</span></h2>
+					<br><br>
+					<h1 class="fragment" data-fragment-index="2">Digital Service Toolkit<br><br><br></h1>
+				</section>
+
+				<section class="">
+					<h1>Our team</h1>
+					<br><br>
+					<div class="flexcolumn">
+						<div class="col goLeft">
+							<h4>We're known for:</h4>
+							<br>
+							<p class="fragment">HTML component library</p>
+							<p class="fragment">Figma wireframe kit</p>
+							<p class="fragment">NSW Design Standards</p>
+							<p class="fragment">Digital community</p>
+						</div>
+						<div class="col goLeft">
+							<h4 class="fragment">We also provide:</h4>
+							<br>
+							<p class="fragment">UX/CX guidance</p>
+							<p class="fragment">React components</p>
+							<p class="fragment">Dev starter kits</p>
+							<p class="fragment">Solutions library</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="dark nsw-blue">
+					<h1>Session 1 of 2</h1>
+					<br><br>
+					<div class="flexcolumn">
+						<div class="col goLeft">
+							<h4>Today:</h4>
+							<br>
+							<p class="fragment">Digital team managers</p>
+							<p class="fragment">UXers</p>
+							<p class="fragment">UI Designers</p>
+							<p class="fragment">CDO's &amp; Directors</p>
+						</div>
+						<div class="col goLeft">
+							<h4 class="fragment">Tomorrow:</h4>
+							<br>
+							<p class="fragment">Devs</p>
+							<p class="fragment">DevOps</p>
+							<p class="fragment">Tech leads</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="dark nsw-blue">
+					<h2>React Components Intro</h2>
+					<br><br>
+					<ul>
+						<li class="fragment">What is react?</li>
+						<li class="fragment">Scaled product team maturity</li>
+						<li class="fragment">Full-stack UX</li>
+						<li class="fragment">React in design</li>
+					</ul>
+				</section>
+
+				<section class="dark nsw-purple">
+					<h2>What is react?</h2>
+					<br><br>
+					<p>React is a code framework for creating UI screens using components, which are pre-fabricated parts for your digital product.</p>
+					<br>
+					<p>Using components takes product design burden off UXers. With quality components, they can work with users and devs to create digital experiences more quickly.</p>
+					<br>
+					<p>Design components support designers, but in a scaled product practive they're used by the whole team.</p>
+				</section>
+
+				<section data-fullscreen class="dark nsw-purple">
+					<p>We measure the practice maturity in Design-System powered teams in 4 stages:</p>
+					<br>
+					<div class="flexcolumn">
+						<div class="col fragment">
+							<span class=" numberspot-light">🐌</span>
+							<br><br>
+							<p>A visual design system</p>
+							<ul>
+								<li class="">Image-based design</li>
+								<li class="">Consistent branding</li>
+								<li class="">Look &amp; Feel</li>
+							</ul>
+						</div>
+						<div class="col fragment">
+							<span class=" numberspot-light flip-horiontal">🐇</span>
+							<br><br>
+							<p>HTML &amp; CSS examples</p>
+							<ul>
+								<li class="">Image-based design</li>
+								<li class="">CSS is ready-made</li>
+								<li class="">Development required</li>
+							</ul>
+						</div>
+						<div class="col fragment">
+							<span class=" numberspot-light flip-horiontal">🚴🏻‍♀️</span>
+							<br><br>
+							<p>Isomorphic image &amp; code</p>
+							<ul>
+								<li class="">Image-based design</li>
+								<li class="">Same library</li>
+								<li class="">Interpretation required</li>
+							</ul>
+						</div>
+						<div class="col fragment">
+							<span class=" numberspot-light">🚀</span>
+							<br><br>
+							<p>Full-stack UX system</p>
+							<ul>
+								<li>Design in (no)code</li>
+								<li class="">Avoid design-drift</li>
+								<li class="">UX focus</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section class="goLeft dark nsw-blue">
+					<h1 class="fragment">Full-stack UX</h1>
+					<p class="fragment"><em>
+						Design which focuses on user experience at every level of a product.
+					</em></p>
+				</section>
+
+				<section class="dark nsw-blue" data-fullscreen>
+					<div class="flexcolumn">
+						<div class="col">
+							<h2>Levels that can impact users' experiences</h2>
+						</div>
+						<div class="col">
+							<ul>
+								<span class="fragment">
+									<li>Whether they can reach their goal</li>
+								</span>
+								<span class="fragment">
+									<li class="padding-top-m">Visual Design</li>
+									<li>UI Design</li>
+									<li>Content Design</li>
+									<li>Usability</li>
+									<li>Accessibility</li>
+								</span>
+								<span class="fragment">
+									<li class="padding-top-m">Frontend code</li>
+									<li>Backend code</li>
+								</span>
+								<span class="fragment">
+									<li class="padding-top-m">APIs</li>
+									<li>Hosting</li>
+								</span>
+								<span class="fragment padding-top-m">
+									<li class="padding-top-m">Privacy</li>
+									<li>Security</li>
+									<li>Trust</li>
+								</span>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section class="dark nsw-blue">
+					<h3 class="fragment fade-up">No role is responsible for users' experiences<br><br></h3>
+					<h3 class="fragment fade-up">No designer should/could know all of these practices <br><br></h3>
+					<h3 class="fragment fade-up">Full-stack components let designers focus on user goals <br><br></h3>
+				</section>
+
+				<section class="dark nsw-blue" data-fullscreen>
+					<h2><br>Example: Asking for a user’s address<br><br></h2>
+					<div class="twocolumn">
+						<div class="col">
+							<h3>Traditional Design System<br><br></h3>
+							<p class="fragment fade-up">UI Design toolkit</p>
+							<ul class="fragment fade-up">
+								<li>How the UI looks</li>
+								<li>The code for a digital UI (HTML & CSS)</li>
+							</ul>
+							<p class="fragment fade-up">UI Dev toolkit</p>
+							<ul class="fragment fade-up">
+								<li>The code for a view-layer component (Vue/React)</li>
+								<li>The type-ahead mechanics (JS)</li>
+							</ul>
+						</div>
+						<div class="col">
+							<h3>Full-stack Design System<br><br></h3>
+							<p class="fragment fade-up">Full-stack & DevOps toolkit</p>
+							<ul class="fragment fade-up">
+								<li>API integration (JS)</li>
+								<li>App boilerplate</li>
+								<li>The API itself (NSW Point/AusPost/Google)</li>
+							</ul>
+							<p class="fragment fade-up">Design Guidance</p>
+							<ul class="fragment fade-up">
+								<li>When it’s not ok to ask for an address</li>
+								<li>What people expect when they can’t answer</li>
+							</ul>
+						</div>
+					</div>
+
+				</section>
+
+				<section class="">
+					<h2>React connects the layers of a component for the designer</h2>
+					<br><br>
+					<p class="fragment">React components are <em>codier</em> than HTML, so can connect the tech layers.<br><br></p>
+					<p class="fragment">Design software lets designers arrange the right react components.<br> <span class="fragment">(without coding)</span> <span class="fragment">(don't panic)</span><br><br></p>
+					<p class="fragment">Instead of developers getting a flat image of how the final thing will look, and working backwards, designers can give them a schematic.</p>
+				</section>
+
+				<section class=" tjspacer" data-fullscreen>
+					<h2>React-based design process</h2>
+					<br><br>
+					<div class="flexcolumn">
+						<div class="col">
+							<h1>💬</h1>
+							<p>Research</p>
+						</div>
+						<div class="col">
+							<h2>→</h2>
+						</div>
+						<div class="col">
+							<h1>👩🏽‍💻</h1>
+							<p>Prototype</p>
+						</div>
+						<div class="col">
+							<h2>→</h2>
+						</div>
+						<div class="col">
+							<h1>✅</h1>
+							<p>Validate</p>
+						</div>
+						<div class="col">
+							<h2>→</h2>
+						</div>
+						<div class="col">
+							<h1>🧑🏻‍🔧</h1>
+							<p>Plug it all in</p>
+						</div>
+						<div class="col">
+							<h2>→</h2>
+						</div>
+						<div class="col">
+							<h1>🚀</h1>
+							<p>SHIP IT!</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="" data-fullscreen>
+					<h2>Tools for designers</h2>
+					<br><br>
+					<div class="flexcolumn">
+						<div class="col">
+							<p><img src="https://cdn.zeplin.io/assets/lp/img/favicon/228x228.png" height="100"></p>
+							<p>Zeplin</p>
+						</div>
+						<div class="col">
+							<p><img src="https://icons-for-free.com/iconfiles/png/512/design+framer+js+learn+icon-1320168263897505927.png" height="100"></p>
+							<p>Framer</p>
+						</div>
+						<div class="col">
+							<p><img src="https://yt3.ggpht.com/ytc/AAUvwnhazV9k5OjDSqnMgPpiQfjUC2j-FHfqIue-YuPLFg=s900-c-k-c0x00ffffff-no-rj" height="100"></p>
+							<p>UXPin Merge</p>
+						</div>
+						<div class="col">
+							<p>
+								<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" height="100">
+								<img src="https://github.com/react-figma/react-figma/raw/master/logo.svg" height="100">
+							</p>
+							<p>Figma &amp; React-figma</p>
+						</div>
+					</div>
+					<br><br>
+					<p>We're still working this out</p>
+					<p>We've already got like-for-like with Figma, but image based</p>
+					<p>We're trialling UXPin Merge from 20th May</p>
+
+				</section>
+
+				<section class="dark nsw-red">
+					<h2>Re-cap</h2>
+					<div class="flexcolumn padding-top-l">
+						<div class="col padding-top-l">
+							<h3>Quality</h3>
+							<p><small>React helps extend the Design System's off-the-shelf quality from UI to UX</small></p>
+						</div>
+						<div class="col padding-top-l">
+							<h3>Efficiency</h3>
+							<p><small>React components save on lots of dev work</small></p>
+						</div>
+					</div>
+					<div class="flexcolumn padding-top-l">
+						<div class="col padding-top-l">
+							<h3>Design drift</h3>
+							<p><small>Designers using no-code versions of the same things creates a shared language</small></p>
+						</div>
+						<div class="col padding-top-l">
+							<h3>Early adopters</h3>
+							<p><small>We need you</small></p>
+						</div>
+					</div>
+					<br><br>
+				</section>
+
+				<section class="confetti">
+					<h3>It's live now</h3>
+					<br>
+					<p><img src="docs.png" height="300"></p>
+					<p>digitalnsw.github.io/nsw-design-system-docs</p>
+				</section>
+
+				<section class="">
+					<h4>Questions?</h4>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="../global/dist/reveal.js"></script>
+		<script src="../global/nsw-preso.js"></script>
+
+	</body>
+</html>
