@@ -1,0 +1,376 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Presentation</title>
+		<link rel="stylesheet" href="../global/dist/reset.css">
+		<link rel="stylesheet" href="../global/dist/reveal.css">
+		<link rel="stylesheet" href="../global/tjharrop-theme.css" id="theme">
+		<link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
+		<link rel="stylesheet" href="../global/plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="../global/theme-addons.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+		<script src="../global/plugin/notes/notes.js"></script>
+		<script src="../global/plugin/markdown/markdown.js"></script>
+		<script src="../global/plugin/highlight/highlight.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/rajgoel/reveal.js-plugins/fullscreen/plugin.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.3/dist/confetti.browser.min.js"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<h1>'ey up! 👋</h1>
+					<br>
+					<img class="headshot">
+					<img src="../global/assets/IMG_0899.jpg" style="display: none;">
+					<aside class="notes">
+						Hello I'm TJ
+					</aside>
+				</section>
+
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h2>Sorry, who?</h2>
+						</div>
+						<div class="col">
+							<ul>
+								<li>NSW Design System Product Manager</li>
+								<li>IxD/UXer</li>
+								<li>Like pairing design and code</li>
+							</ul>
+						</div>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>Quick intro</li>
+							<li>Currently PM of the NSW Gov Design System
+								<ul>
+									<li>A DS for all of the NSW Government</li>
+									<li>Not the only one!</li>
+									<li>Not a central design owner team</li>
+								</ul>
+							</li>
+							<li>Part of a wider team moving from UI Kits to full DesignOps</li>
+							<li>Before that:
+								<ul>
+									<li>Interaction Designer at the Home Office</li>
+									<li>Background in UX and Interaction Design</li>
+									<li>Also enjoy (really) coding</li>
+									<li>Been around UX for about 15 years</li>
+								</ul>
+							</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h2>Getting into DesignOps</h2>
+							<br><br>
+							<p>Some battle stories from an old man 👴🏻</p>
+						</div>
+						<div class="col">
+							<p>Never found the right fit between:</p>
+							<ul>
+								<li>UI dev</li>
+								<li>UX design</li>
+								<li>Service Design</li>
+								<li>Mastering scrums</li>
+								<li>Managing design teams</li>
+							</ul>
+							<p>Found my ❤️ helping others fill the gaps between those things.</p>
+						</div>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>Tried many jobs</li>
+							<li>Enjoyed everything, but wanted to mix things</li>
+							<li>Special power: HATING NASTY PROCESSES</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<p><em><small>Nice origin story, friend, but...</small></em></p>
+					<h4>What are we talking about today?</h4>
+					<br><br>
+					<h1 class="fragment">DesignOps helping teams design the whole experience</h1>
+				</section>
+
+				<section data-fullscreen class="goLeft">
+					<h1>What is DesignOps?</h1>
+					<p class="fragment">Giving people in design the <strong>tools, processes, artefacts, and support</strong> they need to make <strong>better things</strong>.</p>
+					<br>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section>
+					<h1><em><strong>People in design</strong></em> might include people not called 'designer'</h1>
+					<br>
+					<p>So we need to define design...</p>
+				</section>
+
+				<section>
+					<h1><span class="fragment">Let's</span> <span class="fragment">get</span> <span class="fragment shake-constant shake-hard">existential!</span></h1>
+				</section>
+
+				<section data-fullscreen class="goLeft">
+					<h1>What even is Design?</h1>
+					<p class="fragment">A process of decisions that make the finished thing good.</p>
+					<p class="fragment">Within digital, the definition of good is a good experience and outcome.</p>
+					<br>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section class="dark nsw-blue" data-fullscreen>
+					<h2>Levels that can impact users' experiences</h2>
+					<div class="flexcolumn padding-top-l">
+
+						<div class="col">
+							<ul>
+								<span class="fragment">
+									<li>Whether they can reach their goal</li>
+								</span>
+								<span class="fragment">
+									<li class="padding-top-m">Visual Design</li>
+									<li>UI Design</li>
+									<li>Content Design</li>
+									<li>Usability</li>
+									<li>Accessibility</li>
+								</span>
+							</ul>
+						</div>
+						<div class="col">
+							<ul>
+								<span class="fragment">
+									<li class="padding-top-m">Frontend code</li>
+									<li>Backend code</li>
+								</span>
+								<span class="fragment">
+									<li class="padding-top-m">APIs</li>
+									<li>Hosting</li>
+								</span>
+								<span class="fragment padding-top-m">
+									<li class="padding-top-m">Privacy</li>
+									<li>Security</li>
+									<li>Trust</li>
+								</span>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section class="">
+					<h3 class="fragment fade-up">Everyone is responsible for users' experiences<br><br></h3>
+					<h3 class="fragment fade-up">No designer should/could know all of these practices <br><br></h3>
+					<h3 class="fragment fade-up">Design's input is stretched thin <br><br></h3>
+				</section>
+
+				<section class="goLeft" data-fullscreen>
+					<h1 class="fragment">Full-stack UX</h1>
+					<p class="fragment"><em>
+						Design which focuses on user experience at every level of a product.
+					</em></p>
+				</section>
+
+				<section data-fullscreen class="cover" style="background-image: url(https://media.giphy.com/media/3o7btPCcdNniyf0ArS/source.gif); background-position: center;">
+						<h1 class="white-box block-shadow">But how?!</h1>
+				</section>
+
+				<section>
+					<h1>2 symbiotic things</h1>
+					<div class="flexcolumn padding-top-l">
+						<div class="col">A full stack design system</div>
+						<div class="col">DesignOps 2.0</div>
+					</div>
+				</section>
+
+				<section class="goLeft" data-fullscreen>
+					<p class="fragment">Full-stack UX can be helped in the same way UI/UX is...</p>
+					<h1 class="fragment"><br>A full-stack design system<br><br></h1>
+					<p class="fragment">Good UX off-the-shelf, across the whole stack</p>
+				</section>
+
+				<section class="dark nsw-blue" data-fullscreen>
+					<h2><br>Example: Asking a user for an address<br><br></h2>
+					<div class="twocolumn">
+						<div class="col">
+							<h3>Traditional Design System<br><br></h3>
+							<p class="fragment fade-up">UI Design toolkit</p>
+							<ul class="fragment fade-up">
+								<li>How the UI looks</li>
+								<li>The code for a digital UI (HTML & CSS)</li>
+							</ul>
+							<p class="fragment fade-up">UI Dev toolkit</p>
+							<ul class="fragment fade-up">
+								<li>The code for a view-layer component (Vue/React)</li>
+								<li>The type-ahead mechanics (JS)</li>
+							</ul>
+						</div>
+						<div class="col">
+							<h3>Full-stack Design System<br><br></h3>
+							<p class="fragment fade-up">Full-stack & DevOps toolkit</p>
+							<ul class="fragment fade-up">
+								<li>API integration (JS)</li>
+								<li>App boilerplate</li>
+								<li>Reliable data</li>
+							</ul>
+							<p class="fragment fade-up">Design Guidance</p>
+							<ul class="fragment fade-up">
+								<li>When it’s not ok to ask for an address</li>
+								<li>What people expect when they can’t answer</li>
+							</ul>
+						</div>
+					</div>
+
+				</section>
+
+				<section>
+					<h1>DesignOps 2.0 scales full-stack UX</h1>
+				</section>
+
+				<section>
+					<h1>Is it about quality or efficiency? The famous triangle fable - assumes it's the same amount of work</h1>
+				</section>
+
+				<section>
+					<h1>Quality is about reinvesting the time saved</h1>
+				</section>
+
+				<section>
+					<h1>Getting there in 4 stages</h1>
+					<div class="flexcolumn">
+						<div class="col fragment">
+							<span class=" numberspot-light">🐌</span>
+							<br><br>
+							<p>A visual design system</p>
+							<ul>
+								<li class="">Image-based design</li>
+								<li class="">Consistent branding</li>
+								<li class="">Look &amp; Feel</li>
+							</ul>
+						</div>
+						<div class="col fragment">
+							<span class=" numberspot-light flip-horiontal">🐇</span>
+							<br><br>
+							<p>HTML &amp; CSS examples</p>
+							<ul>
+								<li class="">Image-based design</li>
+								<li class="">CSS is ready-made</li>
+								<li class="">Development required</li>
+							</ul>
+						</div>
+						<div class="col fragment">
+							<span class=" numberspot-light flip-horiontal">🚴🏻‍♀️</span>
+							<br><br>
+							<p>Isomorphic image &amp; code</p>
+							<ul>
+								<li class="">Image-based design</li>
+								<li class="">Replica library</li>
+								<li class="">Interpretation required</li>
+							</ul>
+						</div>
+						<div class="col fragment">
+							<span class=" numberspot-light">🚀</span>
+							<br><br>
+							<p>Full-stack UX system</p>
+							<ul>
+								<li>Design in (no)code</li>
+								<li class="">Avoid design-drift</li>
+								<li class="">UX focus</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h1>Key ingredient: Creative technologists</h1>
+				</section>
+
+				<section>
+					<h1>Creative tech &amp; UX process</h1>
+				</section>
+
+				<section>
+					<h1>Reality: most of us are in challenging environments</h1>
+				</section>
+
+				<section>
+					<h1>No-code tools if you need them</h1>
+				</section>
+
+				<section>
+					<h1>Take-home: full stack pattern template</h1>
+				</section>
+
+				<section>
+					<h1>Intro</h1>
+				</section>
+
+
+
+				<section data-fullscreen class="goLeft">
+					<h1>Left aligned slide</h1>
+					<p>With text</p>
+					<br><br>
+					<h3>Followed by a subtitle</h3>
+					<p>...and more text</p>
+					<aside class="notes">
+						Slide notes 📝
+					</aside>
+				</section>
+
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h2>Two column with a title</h2>
+						</div>
+						<div class="col">
+							<p>Followed on the right by
+							<ul>
+								<li>This list</li>
+								<li>of</li>
+								<li>things</li>
+							</ul>
+						</div>
+					</div>
+					<aside class="notes">
+						Slide notes 📝
+					</aside>
+				</section>
+
+				<section data-fullscreen class="tjspacer">
+					<h1>This is a fullscreen slide<br><br></h1>
+					<h1 class="fragment fade-up">With a margin on the left &amp; right <br><br></h1>
+					<h1 class="fragment fade-up">And things that appear 1 at a time</h1>
+				</section>
+
+				<section>
+					<h1>This is a title in the middle and nothing else</h1>
+				</section>
+
+				<section>
+					<h1>Thank you! <br><br></h1>
+					<p><i class="fab fa-twitter"></i> <i class="fab fa-medium"></i> @tjharrop<br><br></p>
+					<p>tjharrop.com</p>
+					<p><i class="fab fa-linkedin"></i> linkedin.com/in/tjharrop</p>
+				</section>
+			</div>
+		</div>
+
+		<div class="blob"></div>
+		<script src="../global/dist/reveal.js"></script>
+		<script src="../global/blob-maker.js"></script>
+
+	</body>
+</html>
