@@ -169,18 +169,12 @@
   background-image: linear-gradient(45deg, rgba(255,0,0,0.2) 25%, rgba(255,255,255,0) 25%, rgba(255,255,255,0) 50%, rgba(255,0,0,0.2) 50%, rgba(255,0,0,0.2) 75%, rgba(255,255,255,0) 75%, rgba(255,255,255,0) 100%);
 background-size: 169.71px 169.71px;
 }
-
-.arrow {
-  pointer-events: none;
-  z-index: 2;
-}
-.arrow__path {
-  stroke: black;
-  fill: transparent;
-  stroke-dasharray: 8 4;
-  stroke-width: 2px;
-}
-.arrow__head line {
-  stroke: black;
-  stroke-width: 2px;
+.ace,
+.reveal section .ace,
+.reveal section h1.ace,
+.reveal section h2.ace,
+.reveal section h3.ace,
+.reveal section h4.ace,
+.reveal section p.ace {
+  
 }
