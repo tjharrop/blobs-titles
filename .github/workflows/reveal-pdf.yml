@@ -19,7 +19,7 @@ jobs:
         run: mkdir slides && sudo chmod 777 slides
 
       - name: Build PDF
-        run: docker run --rm -t -v `pwd`:/slides -v ~:/home/user astefanutti/decktape presentations/${{ github.event.inputs.preso }}/index.html slides/${{ github.event.inputs.preso }}.pdf
+        run: docker run --rm -t -v `pwd`:/presentations -v ~:/home/user astefanutti/decktape ${{ github.event.inputs.preso }}/index.html slides/${{ github.event.inputs.preso }}.pdf
 
       - name: Commit files
         run: |
