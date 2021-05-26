@@ -102,6 +102,9 @@
 .left-text {
   text-align: left;
 }
+.right-text {
+  text-align: right;
+}
 
 .flip-horizontally {
   transform: scaleX(-1);
@@ -176,5 +179,5 @@ background-size: 169.71px 169.71px;
 .reveal section h3.ace,
 .reveal section h4.ace,
 .reveal section p.ace {
-  
+
 }
