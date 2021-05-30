@@ -75,16 +75,16 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   text-shadow: none;
   word-wrap: break-word; }
 
-.reveal section h1 {
+.reveal section h1, .reveal section .XXL {
   font-size: var(--heading1-size); }
 
-.reveal section h2 {
+.reveal section h2, .reveal section .XL {
   font-size: var(--heading2-size); }
 
-.reveal section h3 {
+.reveal section h3, .reveal section .L {
   font-size: var(--heading3-size); }
 
-.reveal section h4 {
+.reveal section h4, .reveal section .M {
   font-size: var(--heading4-size); }
 
 .reveal section h1 {

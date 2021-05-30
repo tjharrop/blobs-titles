@@ -36,6 +36,10 @@
 .goLeft {
   padding:7%;
   text-align: left;
+  max-width: 1200px;
+}
+
+.goLeft h1, .goLeft h2, .goLeft h4, .goLeft p {
   max-width: 900px;
 }
 
@@ -132,11 +136,15 @@
 
 .flexcolumn {
    display: flex;
- }
- .flexcolumn .col {
+}
+.flexcolumn .col {
     flex: 1;
-    padding: 20px;
-  }
+    padding: 40px;
+}
+.flexcolumn .col.flush {
+    flex: 1;
+    padding: 0;
+}
 
 .flip-horiontal {
   transform: scale(-1, 1);

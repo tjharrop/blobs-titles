@@ -10,7 +10,7 @@ Reveal.initialize({
 } );
 
 Reveal.on( 'slidechanged', event => {
-  generateBlob();
+
   if ( event.currentSlide.getAttribute("data-playaudio") ){
     playaudio(event.currentSlide.getAttribute("data-playaudio"));
   }
@@ -40,6 +40,27 @@ Reveal.on( 'slidechanged', event => {
       generateBlob();
     }, 500);
   }
+  if ( event.currentSlide.className.includes("end") ){
+    midBlob();
+    var duration = 50 * 1000;
+    var animationEnd = Date.now() + duration;
+
+    var interval = setInterval(function() {
+      var timeLeft = animationEnd - Date.now();
+
+      if (timeLeft <= 0) {
+        return clearInterval(interval);
+      }
+
+      midBlob();
+    }, 3000);
+  }
+  else if ( event.currentSlide.className.includes("mid") ){
+        midBlob();
+  }
+  else {
+    generateBlob();
+  }
 } );
 
 document.addEventListener("keydown", event => {
@@ -48,6 +69,9 @@ document.addEventListener("keydown", event => {
   }
   if (event.keyCode === 67) {
     confettiBasic();
+  }
+  if (event.keyCode === 77) {
+    midBlob();
   }
 });
 
@@ -82,6 +106,29 @@ function generateBlob() {
 
   document.querySelector('.blob').style.right = `${right}%`
   document.querySelector('.blob').style.top = `${top}%`
+  document.querySelector('.blob').style.transform =  `scale(${zoom}) rotateZ(${rotate}deg)`
+  document.querySelector('.blob').style.background =  colors[rand]
+  document.querySelector('.blob').style.borderRadius = borderRadius
+}
+
+function midBlob() {
+  const rand = Math.floor(Math.random()*colors.length);
+
+  const percentage1 = _.random(20, 75);
+  const percentage2 = _.random(30, 50);
+  const percentage3 = _.random(18, 60);
+  const percentage4 = _.random(25, 75);
+  var percentage11 = 100 - percentage1;
+  var percentage21 = 100 - percentage2;
+  var percentage31 = 100 - percentage3;
+  var percentage41 = 100 - percentage4;
+  var borderRadius = `${percentage1}% ${percentage11}% ${percentage21}% ${percentage2}% / ${percentage3}% ${percentage4}% ${percentage41}% ${percentage31}%`;
+
+  const rotate = _.random(0, 180); //rotate
+  const zoom = _.random(4, 5);
+
+  document.querySelector('.blob').style.right = `45%`
+  document.querySelector('.blob').style.top = `40%`
   document.querySelector('.blob').style.transform =  `scale(${zoom}) rotateZ(${rotate}deg)`
   document.querySelector('.blob').style.background =  colors[rand]
   document.querySelector('.blob').style.borderRadius = borderRadius
