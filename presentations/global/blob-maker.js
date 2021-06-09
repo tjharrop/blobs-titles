@@ -109,6 +109,7 @@ function generateBlob() {
   document.querySelector('.blob').style.transform =  `scale(${zoom}) rotateZ(${rotate}deg)`
   document.querySelector('.blob').style.background =  colors[rand]
   document.querySelector('.blob').style.borderRadius = borderRadius
+  // document.querySelector('.blob').style.boxShadow = `0px 0px 13px 20px ${colors[rand]}`
 }
 
 function midBlob() {
@@ -132,6 +133,7 @@ function midBlob() {
   document.querySelector('.blob').style.transform =  `scale(${zoom}) rotateZ(${rotate}deg)`
   document.querySelector('.blob').style.background =  colors[rand]
   document.querySelector('.blob').style.borderRadius = borderRadius
+  // document.querySelector('.blob').style.boxShadow = `0px 0px 13px 20px ${colors[rand]}`
 }
 
 function confettiMachine() {
