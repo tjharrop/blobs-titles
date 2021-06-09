@@ -1,0 +1,71 @@
+main {
+	margin: 20px 0 20px 0;
+	font-family: "Roboto Mono";
+}
+
+.blob {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  transition: all .7s ease-in-out;
+  /* Default styling */
+  right: -3%; top: 30%; transform: scale(11) rotateZ(29deg); background: rgb(252, 191, 73); border-radius: 52% 48% 56% 44% / 53% 56% 44% 47%; opacity: 1;
+}
+
+.row .column:first-child {
+	border-left: 6px solid #333;
+}
+.row .column:last-child {
+	border-right: 6px solid #333;
+}
+
+.row-one .column {
+	border-top: 6px solid #333;
+}
+
+.row-three .column {
+	border-bottom: 6px solid #333;
+}
+
+.column {
+	border: 3px solid #333;
+	overflow: hidden;
+	background: #fff;
+}
+	.row-one .column {
+		min-height: 300px;
+	}
+	.row-two .column {
+		min-height: 150px;
+	}
+
+hr.divider {
+	margin: 0 -20px;
+	border-top: 1px solid #AAAAAA
+}
+
+/* Typography */
+h2.section-title {
+	font-size: 17px;
+	font-weight: 500;
+	color: #333333;
+}
+
+h3.sub-section-title {
+	font-size: 14px;
+	font-weight: 500;
+}
+
+section p {
+	color: #666666;
+	font-weight: 300;
+}
+
+/* Equal Height Columns */
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
