@@ -1,0 +1,1099 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>EUX - UXing with a design system</title>
+		<link rel="stylesheet" href="../global/dist/reset.css">
+		<link rel="stylesheet" href="../global/dist/reveal.css">
+		<link rel="stylesheet" href="../global/tjharrop-theme.css" id="theme">
+		<link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
+		<link rel="stylesheet" href="../global/plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="../global/theme-addons.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+		<script src="../global/plugin/notes/notes.js"></script>
+		<script src="../global/plugin/markdown/markdown.js"></script>
+		<script src="../global/plugin/highlight/highlight.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/rajgoel/reveal.js-plugins/fullscreen/plugin.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.3/dist/confetti.browser.min.js"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/arrows-svg@1.5.4/dist/main.min.js"></script>
+
+		<script src="https://twemoji.maxcdn.com/v/13.0.2/twemoji.min.js" integrity="sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b" crossorigin="anonymous"></script>
+
+		<style>
+		.arrow {
+		  pointer-events: none;
+		  z-index: 2;
+		}
+		.arrow__path {
+		  stroke: black;
+		  fill: transparent;
+		  stroke-dasharray: 8 4;
+		  stroke-width: 2px;
+		}
+		.arrow__head line {
+		  stroke: black;
+		  stroke-width: 2px;
+		}
+		.arrow2 {
+		  pointer-events: none;
+		  z-index: 2;
+		}
+		.arrow2__path {
+		  stroke: rgba(0,0,0,0.3);
+		  fill: transparent;
+		  stroke-dasharray: 8 4;
+		  stroke-width: 2px;
+		}
+		.arrow2__head  {
+		  fill: rgba(0,0,0,0.3);
+		}
+		#buildstep2 {
+			opacity: 0.3;
+		}
+
+		.tree ul {
+	padding-top: 20px!important; position: relative;
+
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+.tree li {
+	float: left; text-align: center;
+	list-style-type: none;
+	position: relative;
+	padding: 20px 5px 0 5px!important;
+
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.tree li::before, .tree li::after{
+	content: '';
+	position: absolute; top: 0; right: 50%;
+	border-top: 2px solid #D35B52;
+	width: 50%; height: 20px;
+}
+.tree li::after{
+	right: auto; left: 50%;
+	border-left: 2px solid #D35B52;
+}
+
+/*We need to remove left-right connectors from elements without
+any siblings*/
+.tree li:only-child::after, .tree li:only-child::before {
+	display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and
+right connector from last child*/
+.tree li:first-child::before, .tree li:last-child::after{
+	border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before{
+	border-right: 2px solid #D35B52;
+	border-radius: 0 5px 0 0;
+	-webkit-border-radius: 0 5px 0 0;
+	-moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+	border-radius: 5px 0 0 0;
+	-webkit-border-radius: 5px 0 0 0;
+	-moz-border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before{
+	content: '';
+	position: absolute; top: 0; left: 50%;
+	border-left: 2px solid #D35B52;
+	width: 0; height: 20px;
+}
+
+.tree li span{
+
+	padding: 5px 20px!important;
+	text-decoration: none;
+	font-size: 11px;
+	display: inline-block;
+
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+.tree li a:hover, .tree li a:hover+ul li a {
+	background: #c8e4f8; color: #000;
+}
+/*Connector styles on hover*/
+.tree li a:hover+ul li::after,
+.tree li a:hover+ul li::before,
+.tree li a:hover+ul::before,
+.tree li a:hover+ul ul::before{
+	border-color:  #94a0b4;
+}
+.tree * {margin: 0!important; padding: 0!important;font-size: 16px!important;}
+.tree {zoom:2;}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section class="mid">
+					<h1>Hello! 👋</h1>
+					<br>
+					<img class="headshot" style="display: none;">
+					<img src="../global/assets/tjpeace.png" width="200">
+					<aside class="notes">
+						Hello I'm TJ
+					</aside>
+				</section>
+
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h2>Nice to meet you</h2>
+						</div>
+						<div class="col">
+							<ul>
+								<li class="fragment">I'm TJ</li>
+								<li class="fragment">Usually <img class="fragment fade-in-then-out block-shadow" src="../global/assets/tooshort.jpg" style="position: absolute; left: 50%; top: 50%; margin-left:-315px; margin-top: -125px;"></li>
+								<li class="fragment">I do design systems</li>
+								<li class="fragment">Designer &amp; Developer</li>
+								<li class="fragment">Like pairing design and code</li>
+							</ul>
+						</div>
+					</div>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section class="goLeft" data-fullscreen>
+					<p><em><small>Nice origin story, friend, but...</small></em></p>
+					<h4>What are we talking about today?</h4>
+					<br><br>
+					<h1 class="fragment">UX at scale</h1>
+					<br><br>
+					<ul>
+						<li class="fragment">Ways to scale</li>
+						<li class="fragment">Working smarter</li>
+						<li class="fragment">Implementing this stuff</li>
+						<li class="fragment">What designers do</li>
+						<li class="fragment">Tools to help</li>
+					</ul>
+					<aside class="notes">
+					</aside>
+				</section>
+
+
+
+								<section data-fullscreen class="goLeft">
+									<h2>Why UX teams are growing</h2>
+									<p class="fragment"><br>UX has gone from early-adopters to business critical</p><br>
+									<p class="fragment">Companies are desperate to get more of that sweet sweet UX improvement.</p><br>
+									<p class="fragment">But scaling, so far, has been...problematic.</p><br>
+									<aside class="notes">
+										Notes 📝
+									</aside>
+								</section>
+
+								<section data-fullscreen class="">
+									<h2>Option 1 - The Spotify model</h2>
+
+									<div class="tree">
+									  <ul>
+									    <li class="fragment" data-fragment-index="1"> <span href="#">Are you spotify?</span>
+									      <ul>
+									        <li class="fragment" data-fragment-index="2"> <span href="#">Yes</span>
+									          <ul>
+									            <li class="fragment" data-fragment-index="3"> <span href="#">🎉 It will work! 🎉</span></li>
+									          </ul>
+									        </li>
+									        <li class="fragment" data-fragment-index="2"> <span href="#">No</span>
+									          <ul>
+									            <li class="fragment" data-fragment-index="4"><span href="#">🚨 It might not work 🚨</span></li>
+									          </ul>
+									        </li>
+									      </ul>
+									    </li>
+									  </ul>
+									</div>
+
+									<aside class="notes">
+										Notes 📝
+									</aside>
+								</section>
+
+								<section data-fullscreen class="cover" style="background-image: url(https://media.giphy.com/media/KBKM2vFZFYImI/giphy.gif); background-position: center;">
+									<h1 class="white-box block-shadow">Option 2: Just give UXers heaps more work</h1>
+									<aside class="notes">
+										Puts the pressure on UXers of getting other practices on-borad
+									</aside>
+								</section>
+
+
+								<!-- <section>
+									<h1>Getting UX into more places</h1>
+								</section> -->
+
+								<section data-fullscreen class="cover" style="background-image: url(https://media.giphy.com/media/inEZXlAOb1TC8/source.gif); background-position: center;">
+										<h1 class="white-box block-shadow">Option 3: Clone them</h1>
+										<aside class="notes">
+											But no...this is just more of the same. Having a UXer in every team is pointless if it doesn't impact others.
+										</aside>
+								</section>
+
+								<section data-fullscreen class="cover" style="background-image: url(https://media.giphy.com/media/d3mlE7uhX8KFgEmY/giphy.gif); background-position: center;">
+										<h1 class="white-box block-shadow">Option 4: Work smarter, not harder</h1>
+										<aside class="notes">
+											LOL amirite?
+										</aside>
+								</section>
+
+								<section data-fullscreen class="goLeft">
+									<h2>Smarter?</h2>
+									<p class="fragment"><br>Scale the impact, better experiences, rather than the work we call UX</p><br>
+									<p class="fragment">Facilitate people in design, not people called UXer</p>
+									<br>
+									<p class="fragment">Get anytihng <strong>repetitive, automatable, or centralised</strong> out of the way so UXers can do <strong>the work their actual product needs</strong>.</p>
+									<aside class="notes">
+										Notes 📝
+									</aside>
+								</section>
+
+								<section class="goLeft" data-fullscreen>
+									<h1>What can we, humble UXers, <em><strong>actually do</strong></em> to make this happen if it's not just us we're changing?</h1>
+									<aside class="notes">
+										Notes 📝
+									</aside>
+								</section>
+
+								<section data-fullscreen class="full-cover" style="background-color: black; background-image: url(https://media.giphy.com/media/oZwVVO5EpYImc/source.gif?cid=ecf05e4718i3a96qiv45khm9e4sec3bga30xoe9svvtxpphz&rid=source.gif&ct=g); background-position: center;">
+										<aside class="notes"></aside>
+								</section>
+
+								<section data-fullscreen>
+									<h3>Let's talk implementation...</h3>
+									<p class="fragment" data-fragment-index="1">
+										<br>
+										This is just my personal approach.
+									</p>
+									<div class="tree">
+									  <ul>
+									    <li class="fragment" data-fragment-index="2"> <span href="#">Are you TJ?</span>
+									      <ul>
+									        <li class="fragment" data-fragment-index="3"> <span href="#">Yes</span>
+									          <ul>
+									            <li class="fragment" data-fragment-index="4"> <span href="#">🎉 It's working! 🎉</span></li>
+									          </ul>
+									        </li>
+									        <li class="fragment" data-fragment-index="3"> <span href="#">No</span>
+									          <ul>
+									            <li class="fragment" data-fragment-index="5"><span href="#">🤔 It might work 🤔</span></li>
+									          </ul>
+									        </li>
+									      </ul>
+									    </li>
+									  </ul>
+									</div>
+									<aside class="notes">
+										Notes 📝
+									</aside>
+								</section>
+
+								<section class="goLeft" data-fullscreen>
+									<h1><em><strong>People in design</strong></em>, not 'designers'</h1>
+									<br>
+									<p>The two aren't always the same.</p>
+									<aside class="notes">
+										Notes 📝
+									</aside>
+								</section>
+
+								<section data-fullscreen class="goLeft">
+									<h1>Who are people in design?</h1>
+									<p class="fragment padding-top-m">Designers.</p>
+									<p class="fragment padding-top-m">Anyone who builds the experience of a product or service.</p>
+									<p class="fragment padding-top-m">Anyone who supports the users of those products or services.</p>
+									<br>
+									<aside class="notes">
+										Notes 📝
+									</aside>
+								</section>
+
+								<section data-fullscreen>
+									<h2>Hold up... UXers don't create the UX?</h2>
+									<br><br>
+									<div class="twocolumn">
+										<div class="col">
+											<p>A user's experience can be impacted by all layers of a product or service.</p>
+											<p class="fragment padding-top-m">Visual design</p>
+											<p class="fragment padding-top-m">UI / Interaction design</p>
+											<p class="fragment padding-top-m">Content</p>
+											<p class="fragment padding-top-m">Code</p>
+											<p class="fragment padding-top-m">Servers and stuff</p>
+											<img class="fragment fade-in-then-out block-shadow" src="../global/assets/tooshort.jpg" style="position: absolute; left: 50%; top: 50%; margin-left:-315px; margin-top: -125px;">
+										</div>
+										<div class="col">
+											<img class="block-shadow" src="https://media.giphy.com/media/11JbbNHfXBqqhq/source.gif?cid=ecf05e47ieybj4ouv33meowgfhrujtnclre3wvpsbixsjvr8&rid=source.gif&ct=g" width="480">
+										</div>
+									</div>
+									<aside class="notes">
+										Notes 📝
+									</aside>
+								</section>
+
+								<section class="" data-fullscreen>
+									<h2>How the UX role actually changes...</h2>
+
+									<aside class="notes">
+									</aside>
+								</section>
+
+								<section data-fullscreen class="full-cover" style="background-color: black; background-image: url(https://media.giphy.com/media/kdQakgpjC519d39cEM/giphy.gif); background-position: center;">
+									<h1 class="white-box block-shadow fragment">#1: Get good UX into the tools, not the products</h1>
+									<aside class="notes"></aside>
+								</section>
+
+								<section data-fullscreen class="full-cover" style="background-color: black; background-image: url(https://media.giphy.com/media/a0xFgQA2ZwjBem5c6M/giphy.gif); background-position: center;">
+									<h1 class="white-box block-shadow fragment">#2: Full-stack components</h1>
+									<aside class="notes"></aside>
+								</section>
+								<section class="dark nsw-blue" data-fullscreen>
+									<h2><br>Anatomy of a full-stack component<br><br></h2>
+									<div class="twocolumn">
+										<div class="col">
+											<h3>Traditional Design System<br><br></h3>
+											<p class="fragment fade-up">UI Design toolkit</p>
+											<ul class="fragment fade-up">
+												<li>Look &amp; feel</li>
+												<li>Digital UI (HTML & CSS)</li>
+											</ul>
+											<p class="fragment fade-up">UI Dev toolkit</p>
+											<ul class="fragment fade-up">
+												<li>The code for a view-layer component (Vue/React)</li>
+												<li>API integration (JS)</li>
+											</ul>
+										</div>
+										<div class="col">
+											<h3>Full-stack Design System<br><br></h3>
+											<p class="fragment fade-up">Tech toolkit</p>
+											<ul class="fragment fade-up">
+												<li>App boilerplate</li>
+												<li>Reliable and secure IaaS &amp; PaaS</li>
+											</ul>
+											<p class="fragment fade-up">Behind-the-scenes user-centricity</p>
+											<ul class="fragment fade-up">
+												<li>Content guidance</li>
+												<li>Helping users come unstuck</li>
+												<li>Support channels</li>
+												<li>Approachability &amp; accessibility</li>
+											</ul>
+										</div>
+									</div>
+
+									<aside class="notes">
+										Notes 📝
+									</aside>
+								</section>
+
+								<section data-fullscreen class="full-cover" style="background-color: black; background-image: url(https://media.giphy.com/media/TsKexoFHkFtSDsTvot/giphy.gif); background-position: center;">
+									<h1 class="white-box block-shadow fragment">#3: Talk in schematics, not pixels</h1>
+									<aside class="notes"></aside>
+								</section>
+
+								<section class="tjspacer" data-fullscreen>
+				 				 <h3>Design how it's built, not how it looks</h3>
+				 				 <p class="fragment"><br>With other practices using design-owned tools and components, we also need to change our own ways too.</p>
+				 				 <p class="fragment"><br>Our tools need to speak the language of their users. Pictures won't do that.</p>
+				 				 <div class="flexcolumn padding-top-l tjspacer">
+				 					 <div class="col right-text fragment cover" style="background-image: url('3drender.jpeg'); background-position: center; min-height: 300px"></div>
+				 					 <div class="col fragment" style="max-width:200px; min-height: 200px;"><h1>➡️</h1></div>
+				 					 <div class="col left-text fragment cover" style="background-image: url('floorplan.jpeg'); background-position: center; min-height: 300px"></div>
+				 				 </div>
+				 				 <aside class="notes">
+				 					 Notes 📝
+				 				 </aside>
+				 			 </section>
+
+								<section data-fullscreen class="full-cover" style="background-color: black; background-image: url(https://media.giphy.com/media/lpmCRP4dK8UKaBgfvp/giphy.gif); background-position: center;">
+									<h1 class="white-box block-shadow fragment">#4: Never build things, only patterns for things</h1>
+									<aside class="notes"></aside>
+								</section>
+
+								<section data-fullscreen class="full-cover" style="background-color: black; background-image: url(https://media.giphy.com/media/PWnDc0kJmspq2Xtd8e/giphy.gif); background-position: center;">
+									<h1 class="white-box block-shadow fragment">#5: Create low-variable processes</h1>
+									<aside class="notes"></aside>
+								</section>
+
+								<section data-fullscreen class="full-cover" style="background-color: black; background-image: url(https://media.giphy.com/media/KGYSVliFPiRR0g5YuQ/giphy.gif); background-position: center;">
+									<h1 class="white-box block-shadow fragment">#6: Get satisfaction from outcomes, not outputs</h1>
+									<aside class="notes"></aside>
+								</section>
+
+								<section data-fullscreen class="full-cover" style="background-color: black; background-image: url(https://media.giphy.com/media/3orieRdZDEEtIE4bjq/giphy.gif); background-position: center;">
+									<h1 class="white-box block-shadow fragment">#7: Go about your work with the fanatic efficiency of a dev </h1>
+									<aside class="notes"></aside>
+								</section>
+
+								<section data-fullscreen class="full-cover" style="background-color: black; background-image: url(https://media.giphy.com/media/3o7aD2yQmy5bn4AitO/giphy.gif); background-position: center;">
+									<h1 class="white-box block-shadow fragment">#8: Microfrontends</h1>
+									<aside class="notes"></aside>
+								</section>
+
+								<section data-fullscreen class="full-cover" style="background-color: black; background-image: url(https://media.giphy.com/media/1jWBF5MzKWE5SAkbVi/giphy.gif); background-position: center;">
+									<h1 class="white-box block-shadow fragment">#9: Document the shit out of it all</h1>
+									<aside class="notes"></aside>
+								</section>
+
+								<section data-fullscreen class="full-cover" style="background-color: black; background-image: url(https://media.giphy.com/media/j529ybb5ZxD9rLFi8a/giphy.gif); background-position: center;">
+									<h1 class="white-box block-shadow fragment">#10: Make sure you enjoy it</h1>
+									<aside class="notes"></aside>
+								</section>
+
+								<section data-fullscreen>
+									<h1>4th stage of maturity for Design Systems</h1>
+									<div class="flexcolumn padding-top-l">
+										<div class="col fragment">
+											<span class=" numberspot-light ace">🐌</span>
+											<br><br>
+											<p>A visual design system</p>
+											<ul>
+												<li class="">Image-based design</li>
+												<li class="">Consistent branding</li>
+												<li class="">Look &amp; Feel</li>
+											</ul>
+										</div>
+										<div class="col fragment">
+											<span class=" numberspot-light flip-horiontal ace">🐇</span>
+											<br><br>
+											<p>HTML &amp; CSS examples</p>
+											<ul>
+												<li class="">Image-based design</li>
+												<li class="">CSS is ready-made</li>
+												<li class="">Development required</li>
+											</ul>
+										</div>
+										<div class="col fragment">
+											<span class=" numberspot-light flip-horiontal ace">🚴🏻‍♀️</span>
+											<br><br>
+											<p>Isomorphic image &amp; code</p>
+											<ul>
+												<li class="">Image-based design</li>
+												<li class="">Replica library</li>
+												<li class="">Interpretation required</li>
+											</ul>
+										</div>
+										<div class="col fragment">
+											<span class=" numberspot-light ace">🚀</span>
+											<br><br>
+											<p>Full-stack UX system</p>
+											<ul>
+												<li>Connected design &amp; code</li>
+												<li class="">Avoid design-drift</li>
+												<li class="">UX focus</li>
+											</ul>
+										</div>
+									</div>
+									<aside class="notes">
+										Notes 📝
+									</aside>
+								</section>
+
+								<section data-fullscreen>
+									<div class="stretch">
+										<br><br>
+										<h1>Creative tech &amp; UX process</h1>
+										<br><br>
+										<p>The normal UI/UX and dev process</p>
+										<br><br><br><br>
+										<div class="flexcolumn tjspacer" >
+											<div class="col flush">
+												<h1 class="ace">💬</h1>
+												<p>Research</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush" id="">
+												<h1 class="ace">👩🏽‍💻</h1>
+												<p>UI/UX design</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush">
+												<h1 class="ace">✅</h1>
+												<p>Validate</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush" id="">
+												<h1 class="ace">🧑🏻‍🔧</h1>
+												<p>Build the UI</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush">
+												<h1 class="ace">🧑🏻‍🔧</h1>
+												<p>Integrations</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush">
+												<h1 class="ace">🚀</h1>
+												<p>SHIP IT!</p>
+											</div>
+										</div>
+									</div>
+									<aside class="notes">
+										Notes 📝
+									</aside>
+								</section>
+
+								<section data-fullscreen id="processSlide">
+									<div class="stretch">
+										<br><br>
+										<h1>Creative tech &amp; UX process</h1>
+										<br><br>
+										<p>The <em>actual</em> UI/UX and dev process</p>
+										<br><br><br><br>
+										<div class="flexcolumn tjspacer" >
+											<div class="col flush">
+												<h1>💬</h1>
+												<p>Research</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush" id="prototypestep">
+												<h1>👩🏽‍💻</h1>
+												<p>UI/UX design</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush">
+												<h1>✅</h1>
+												<p>Validate</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush" id="buildstep">
+												<h1>🧑🏻‍🔧</h1>
+												<p>Build the UI</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush">
+												<h1>🧑🏻‍🔧</h1>
+												<p>Integrations</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush">
+												<h1>🚀</h1>
+												<p>SHIP IT!</p>
+											</div>
+										</div>
+									</div>
+									<aside class="notes">
+										Notes 📝
+									</aside>
+								</section>
+
+								<section data-fullscreen id="newProcess">
+									<div class="stretch">
+										<br><br>
+										<h1>Creative tech &amp; UX process</h1>
+										<br><br>
+										<p>With a fullstack system, design is about selecting the right components, not building them</p>
+										<br><br><br><br>
+										<div class="flexcolumn tjspacer" >
+											<div class="col flush">
+												<h1>💬</h1>
+												<p>Research</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush" id="prototypestep2">
+												<h1>👩🏽‍💻</h1>
+												<p>FS-UX design</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush">
+												<h1>✅</h1>
+												<p>Validate</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush" id="buildstep2">
+												<h1>🧑🏻‍🔧</h1>
+												<p>Build the UI</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush">
+												<h1>🧑🏻‍🔧</h1>
+												<p>Integrations &amp; UI config</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush">
+												<h1>🚀</h1>
+												<p>SHIP IT!</p>
+											</div>
+										</div>
+									</div>
+									<aside class="notes">
+										Notes 📝
+									</aside>
+								</section>
+
+								
+								<section class="" data-fullscreen>
+									<h2>Tools to kick things off right</h2>
+									<br><br>
+									<div class="flexcolumn">
+										<div class="col">
+											<p><img src="https://cdn.zeplin.io/assets/lp/img/favicon/228x228.png" height="100"></p>
+											<p>Zeplin</p>
+										</div>
+										<div class="col">
+											<p>
+												<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" height="100">
+												<img src="https://github.com/react-figma/react-figma/raw/master/logo.svg" height="100">
+											</p>
+											<p>Figma &amp; React-figma</p>
+										</div>
+										<div class="col">
+											<p><img src="https://icons-for-free.com/iconfiles/png/512/design+framer+js+learn+icon-1320168263897505927.png" height="100"></p>
+											<p>Framer</p>
+										</div>
+										<div class="col">
+											<p><img src="https://yt3.ggpht.com/ytc/AAUvwnhazV9k5OjDSqnMgPpiQfjUC2j-FHfqIue-YuPLFg=s900-c-k-c0x00ffffff-no-rj" height="100"></p>
+											<p>UXPin Merge</p>
+										</div>
+									</div>
+									<br><br>
+									<p>All of these are no-code</p>
+									<p><em>most</em> use renders of code</p>
+
+									<aside class="notes">
+										Notes 📝
+									</aside>
+								</section>
+
+								<section class="mid">
+									<h1 class="">Summary</h1>
+									<div class="flexcolumn">
+										<div class="col">
+											<p class="fragment padding-top-l">Scaled UX is fundamentally different</p>
+											<p class="fragment padding-top-l">Scaling is a team sport</p>
+											<p class="fragment padding-top-l">Design Systems facilitate that</p>
+										</div>
+										<div class="col">
+											<p class="fragment padding-top-l">We might need to work differently</p>
+											<p class="fragment padding-top-l">Automation helps</p>
+											<p class="fragment padding-top-l">You can't just clone people</p>
+										</div>
+									</div>
+									<aside class="notes">
+										Notes 📝
+									</aside>
+								</section>
+
+
+				<section class="fireworks mid end">
+					<h1>Thank you! <br><br></h1>
+					<p><i class="fab fa-twitter"></i> <i class="fab fa-medium"></i> @tjharrop<br><br></p>
+					<p><i class="fab fa-linkedin"></i> linkedin.com/in/tjharrop</p>
+					<br><br>
+				</section>
+
+
+
+
+
+				<!-- <section>
+					<h1><span class="fragment">Let's</span> <span class="fragment">get</span> <span class="fragment shake-constant shake-hard">existential!</span></h1>
+				</section> -->
+
+				<section data-fullscreen class="goLeft">
+					<h1>Capital-D Design vs. design</h1>
+					<div class="twocolumn">
+						<div class="col">
+							<p class="fragment padding-top-m">UX Design</p>
+							<p class="fragment padding-top-m">UX/UI Design</p>
+							<p class="fragment padding-top-m">Service Design</p>
+							<p class="fragment padding-top-m">Content Design</p>
+						</div>
+						<div class="col">
+							<p class="fragment padding-top-m">Decisions that make the thing good.</p>
+							<p class="fragment padding-top-m">In digital, good means a good experience and outcome.</p>
+							<p class="fragment padding-top-m">A good experience is about more than we think.</p>
+						</div>
+					</div>
+					<br>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section data-fullscreen class="goLeft">
+					<h1>Who are people in design?</h1>
+					<p class="fragment padding-top-m">Designers.</p>
+					<p class="fragment padding-top-m">Anyone who builds the experience of a product or service.</p>
+					<p class="fragment padding-top-m">Anyone who supports the users of those products or services.</p>
+					<br>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section data-fullscreen>
+					<h2>Hold up... Designers don't create the UX?</h2>
+					<br><br>
+					<div class="twocolumn">
+						<div class="col">
+							<p>A user's experience can be impacted by all layers of a product or service.</p>
+							<p class="fragment padding-top-m">Visual design</p>
+							<p class="fragment padding-top-m">UI / Interaction design</p>
+							<p class="fragment padding-top-m">Content</p>
+							<p class="fragment padding-top-m">Code</p>
+							<p class="fragment padding-top-m">Servers and stuff</p>
+							<img class="fragment fade-in-then-out block-shadow" src="../global/assets/tooshort.jpg" style="position: absolute; left: 50%; top: 50%; margin-left:-315px; margin-top: -125px;">
+						</div>
+						<div class="col">
+							<img class="block-shadow" src="https://media.giphy.com/media/11JbbNHfXBqqhq/source.gif?cid=ecf05e47ieybj4ouv33meowgfhrujtnclre3wvpsbixsjvr8&rid=source.gif&ct=g" width="480">
+						</div>
+					</div>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section class="goLeft" data-fullscreen>
+					<h4>Why this matters when you scale up...</h4>
+					<br><br>
+					<p class="fragment">Before we scale, we need to think about what we're scaling.</p>
+					<p class="fragment"><br>Scaling will amplify any bugs in the UX approach</p>
+					<p class="fragment"><br>If we're scaling <em>design</em>, we need a reliable system</p>
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+
+
+				<section class="mid" data-fullscreen>
+					<p class="fragment fade-up">✅ Non-UXers are also responsible for users' experiences<br><br></p>
+					<p class="fragment fade-up">👯‍♂️ Good experiences go across practices<br><br></p>
+					<p class="fragment fade-up">🤯 No designer should/could know all of these practices <br><br></p>
+					<h4 class="fragment fade-up"><em>But...</em><br><br></h4>
+					<p class="fragment fade-up">🏁 Design happens first<br><br></p>
+					<h4 class="fragment fade-up"><em>So...</em><br><br></h4>
+					<p class="fragment fade-up">💪 Designers can pass UX considerations on<br><br></p>
+					<h4 class="fragment fade-up"><em>However...</em><br><br></h4>
+					<p class="fragment fade-up">😵‍💫 We are positively bedeviled with work, et cetera<br><br></p>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+
+
+				<section class="goLeft" data-fullscreen>
+					<h3 class="fragment">DesignOps 2.0 ❤️ scaling <em>design</em> (not <em>cloning designers</em>)</h3>
+					<p class="fragment"><br>
+						DesignOps gives your designers the stuff they need to do the same job more efficiently.
+					</p>
+					<p class="fragment"><br>
+						DesignOps 2.0 scales a different UX approach all together. One where designers own the <em>whole</em> experience - at scale.
+					</p>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section class="goLeft" data-fullscreen>
+					<h3>This might seem like taking on <sup>*</sup>more<sup>*</sup> work...</h3>
+
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section data-fullscreen class="full-cover" style="background-color: black; background-image: url(https://media.giphy.com/media/oZwVVO5EpYImc/source.gif?cid=ecf05e4718i3a96qiv45khm9e4sec3bga30xoe9svvtxpphz&rid=source.gif&ct=g); background-position: center;">
+
+						<aside class="notes">
+							LOL amirite?
+						</aside>
+				</section>
+
+				<section data-fullscreen>
+					<h3>Let's talk implementation...</h3>
+					<p class="fragment" data-fragment-index="1">
+						<br>
+						This is just my personal approach.
+					</p>
+					<div class="tree">
+					  <ul>
+					    <li class="fragment" data-fragment-index="2"> <span href="#">Are you TJ?</span>
+					      <ul>
+					        <li class="fragment" data-fragment-index="3"> <span href="#">Yes</span>
+					          <ul>
+					            <li class="fragment" data-fragment-index="4"> <span href="#">🎉 It's working! 🎉</span></li>
+					          </ul>
+					        </li>
+					        <li class="fragment" data-fragment-index="3"> <span href="#">No</span>
+					          <ul>
+					            <li class="fragment" data-fragment-index="5"><span href="#">🤔 It might work 🤔</span></li>
+					          </ul>
+					        </li>
+					      </ul>
+					    </li>
+					  </ul>
+					</div>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section class="goLeft">
+					<h3>Common patterns</h3>
+					<ul>
+						<li class="fragment">Start with designers</li>
+						<li class="fragment">Design Systems help</li>
+						<li class="fragment">Culture over methodology</li>
+						<li class="fragment">Tools and processes help change culture</li>
+						<li class="fragment">Community brings trust</li>
+					</ul>
+
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+
+
+				<section data-fullscreen class="tjspacer">
+					<h2 class="padding-top-m">Start with designers</h2>
+					<h2 class="padding-top-m fragment">(make DesignOps 2.0 work using Design Systems)</h2>
+					<div class="fragment">
+						<div class="flexcolumn padding-top-m tjspacer">
+							<div class="col tjspacer">
+								<h3>Developers</h3>
+								<p>Use components with full UX consideration</p>
+							</div>
+							<div class="col tjspacer">
+								<h3>UI people</h3>
+								<p>Centralise resources minimise product team UI work</p>
+							</div>
+						</div>
+						<div class="flexcolumn tjspacer">
+							<div class="col tjspacer">
+								<h3>UX people</h3>
+								<p>Build contextual patterns around those components</p>
+							</div>
+							<div class="col tjspacer">
+								<h3>Teams</h3>
+								<p>Become arrangers of tested micro-experiences</p>
+							</div>
+						</div>
+					</div>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+<!--
+				<section>
+					<h1 class="wip">Is it about quality or efficiency? The famous triangle fable - assumes it's the same amount of work</h1>
+				</section>
+
+				<section>
+					<h1 class="wip">Quality is about reinvesting the time saved</h1>
+				</section>
+ -->
+
+
+
+
+
+				<section class="goLeft">
+					<h3>Culture</h3>
+					<p class="fragment">Applying this approach is more of a cultural change than it is a change in approach.</p>
+					<p class="fragment"><br>It's probably the biggest change your organisation has seen since agile.</p>
+					<p class="fragment"><br>The tools have to be ready <em>before</em> they're needed.</p>
+					<p class="fragment"><br>Some values that have worked:</p>
+					<ul>
+						<li class="fragment">For organisations: Efficiency 🍰</li>
+						<li class="fragment">For non designers: Reliability</li>
+						<li class="fragment">For all designers: Quality Assurance</li>
+					</ul>
+
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section class="goLeft">
+					<h3>Community</h3>
+					<p class="fragment">If you want to encourage culture change, a community-based approach is more inclusive, and more successful.</p>
+
+					<p class="fragment"><br>
+						<img class="block-shadow" src="https://i.makeagif.com/media/4-18-2015/PHSSmj.gif">
+					</p>
+
+
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section class="mid">
+					<h1 class="">Summary</h1>
+					<div class="flexcolumn">
+						<div class="col">
+							<p class="fragment padding-top-l">Scaled UX is fundamentally different</p>
+							<p class="fragment padding-top-l">Scaling is a team sport</p>
+							<p class="fragment padding-top-l">DesignOps 2.0 is facilitating that</p>
+						</div>
+						<div class="col">
+							<p class="fragment padding-top-l">We might need to work differently</p>
+							<p class="fragment padding-top-l">Automation helps</p>
+							<p class="fragment padding-top-l">You can't just clone people</p>
+						</div>
+					</div>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section class="fireworks mid end">
+					<h1>Thank you! <br><br></h1>
+					<p><i class="fab fa-twitter"></i> <i class="fab fa-medium"></i> @tjharrop<br><br></p>
+					<p>tjharrop.com/full-stack-component</p>
+					<p><i class="fab fa-linkedin"></i> linkedin.com/in/tjharrop</p>
+					<br><br>
+				</section>
+			</div>
+		</div>
+
+		<div class="blob" ></div>
+		<script src="../global/dist/reveal.js"></script>
+		<script src="../global/blob-maker.js"></script>
+		<script>
+
+		const arrow1 = arrowCreate({
+			className: 'arrow',
+			from: {
+				direction: 'top-left',
+				node: document.getElementById('buildstep'),
+				translation: [-0.3, -5],
+			},
+			to: {
+				direction: 'top-right',
+				node: document.getElementById('prototypestep'),
+				translation: [0.3, -5],
+			},
+			head: {
+				func: 'normal',
+				distance: 1.02
+			}
+		})
+
+		const arrow2 = arrowCreate({
+			className: 'arrow',
+			to: {
+				direction: 'bottom-left',
+				node: document.getElementById('buildstep'),
+				translation: [-0.3, 5],
+			},
+			from: {
+				direction: 'bottom-right',
+				node: document.getElementById('prototypestep'),
+				translation: [0.3, 5],
+			},
+			head: {
+				func: 'normal',
+				distance: 1.02
+			}
+		})
+
+		const arrow3 = arrowCreate({
+			className: 'arrow2',
+			from: {
+				direction: 'top-left',
+				node: document.getElementById('buildstep'),
+				translation: [-0.3, -5],
+			},
+			to: {
+				direction: 'top-right',
+				node: document.getElementById('prototypestep'),
+				translation: [0.3, -5],
+			},
+			head: {
+				func: 'normal',
+				distance: 1.02
+			}
+		})
+
+		const arrow4 = arrowCreate({
+			className: 'arrow2',
+			to: {
+				direction: 'bottom-left',
+				node: document.getElementById('buildstep2'),
+				translation: [-0.3, 5],
+			},
+			from: {
+				direction: 'bottom-right',
+				node: document.getElementById('prototypestep2'),
+				translation: [0.3, 5],
+			},
+			head: {
+				func: 'normal',
+				distance: 1.02
+			}
+		})
+
+		document.getElementById('processSlide').appendChild(arrow1.node);
+		document.getElementById('processSlide').appendChild(arrow2.node);
+
+		document.getElementById('newProcess').appendChild(arrow3.node);
+		document.getElementById('newProcess').appendChild(arrow4.node);
+
+		</script>
+
+	</body>
+</html>

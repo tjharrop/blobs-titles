@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+  <title>Waiting room</title>
+  <link rel="stylesheet" href="../global/dist/reset.css">
+  <link rel="stylesheet" href="../global/tjharrop-theme.css" id="theme">
+  <link rel="stylesheet" href="../global/theme-addons.css">
+  <script type = "text/javascript">
+    var bgs = ["https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif",
+    "https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif",
+    "https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif",
+    "https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif",
+    "https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif",
+    "https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif",
+    "https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif",
+    "https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif",
+    "https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif",
+    "https://media.giphy.com/media/l4Ep3mmmj7Bw3adWw/giphy.gif",
+    "https://media.giphy.com/media/gjgWQA5QBuBmUZahOP/source.gif",
+    "https://media.giphy.com/media/fpbqdKRPRkd56/source.gif",
+    "https://media.giphy.com/media/jBBRs81dGWHIY/source.gif",
+    "https://media.giphy.com/media/BlVnrxJgTGsUw/source.gif",
+    "https://media.giphy.com/media/3ornkdtVzQfIRpwfug/source.gif",
+    "https://media.giphy.com/media/3o7qE5866bLg4VKabe/source.gif",
+    "https://media.giphy.com/media/Kdmt5FM1TjbwXpIa2V/giphy.gif",
+    "https://media.giphy.com/media/7LO7q5KcXawaQ/source.gif",
+    "https://media.giphy.com/media/GFys6OHZ1FZWo/source.gif",
+    "https://media.giphy.com/media/blSTtZehjAZ8I/source.gif",
+    "https://media.giphy.com/media/fMfVV4yJCsBcA/source.gif",
+    "https://media.giphy.com/media/10KTdhr5Zzq6uA/source.gif",
+    "https://media.giphy.com/media/3TCBh8i6H3bz2/source.gif",
+    "https://media.giphy.com/media/Sg86rhq4G3vqM/source.gif",
+    "https://media.giphy.com/media/UqktH4tnGQcTvHNz1D/giphy.gif",
+    "https://media.giphy.com/media/l3q2Z6S6n38zjPswo/giphy.gif",
+    "https://media.giphy.com/media/qXZzUzEK8O6hq/source.gif",
+    "https://media.giphy.com/media/giciEsIFsWKTLKMRgZ/source.gif",
+    "https://media.giphy.com/media/35HTaxVJWzp2QOShct/source.gif",
+    "https://media.giphy.com/media/3o6wrvsYfacWLN681y/giphy.gif",
+    "https://media.giphy.com/media/hlWNWCuAuOVEs/source.gif"]
+
+    function changeImage()
+    {
+      var img = document.getElementById("img");
+      var rand = Math.floor(Math.random()*bgs.length);
+      img.style.backgroundImage = `url('${bgs[rand]}')`;
+      if(bgs[rand].includes("Transparent")){
+        img.style.backgroundColor = "transparent"
+      } else {
+        img.style.backgroundColor = "black"
+      }
+    }
+
+    document.addEventListener("keydown", event => {
+      if (event.keyCode === 83) { // show on s
+        document.querySelector("iframe").style.visibility = "visible";
+      }
+      if (event.keyCode === 72) { //hide on h
+        document.querySelector("iframe").style.visibility = "hidden";
+      }
+    });
+
+    var videoSource = new Array();
+    videoSource[0] = 'https://files.tjharrop.com/bgvid.mp4';
+    //videoSource[1] = 'https://files.tjharrop.com/woc-s.mp4';
+    var videoCount = videoSource.length - 1;
+
+    function videoPlay(videoNum) {
+        document.getElementById("bgvid").setAttribute("src", videoSource[videoNum]);
+        document.getElementById("bgvid").load();
+        document.getElementById("bgvid").play();
+        console.log('play' + videoSource[videoNum]);
+    }
+
+    window.onload = function(e) {
+      document.getElementById("bgvid").addEventListener('ended', myHandler, false);
+      videoPlay(videoCount); // play the video
+
+    }
+
+    function myHandler() {
+        if (videoCount > 0) {
+          videoCount --;
+          videoPlay(videoCount);
+        } else {
+          // videoPlay(0); // No more vids soz
+        }
+    }
+
+  </script>
+  <style>
+  iframe {position: absolute; bottom: 50px; right: 50px;}
+  #bgvid {  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;}
+  * {
+  box-sizing: border-box;
+}
+body {  background-color: #000;
+}
+  </style>
+</head>
+<body>
+  <video id="bgvid"></video>
+  <div class="full-cover reveal" id="img">
+    <div>
+      <!-- <p><img src="../global/assets/tj.png"><br><br></p> -->
+      <h1 class="white-box block-shadow centre-text">
+        starting soon
+      </h1>
+    </div>
+  </div>
+  <script>
+    changeImage();
+    setInterval(function(){ changeImage(); }, 3000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,974 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Design in everything</title>
+		<link rel="stylesheet" href="../global/dist/reset.css">
+		<link rel="stylesheet" href="../global/dist/reveal.css">
+		<link rel="stylesheet" href="../global/tjharrop-theme.css" id="theme">
+		<link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
+		<link rel="stylesheet" href="../global/plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="../global/theme-addons.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+		<script src="../global/plugin/notes/notes.js"></script>
+		<script src="../global/plugin/markdown/markdown.js"></script>
+		<script src="../global/plugin/highlight/highlight.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/rajgoel/reveal.js-plugins/fullscreen/plugin.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.3/dist/confetti.browser.min.js"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/arrows-svg@1.5.4/dist/main.min.js"></script>
+
+		<script src="https://twemoji.maxcdn.com/v/13.0.2/twemoji.min.js" integrity="sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b" crossorigin="anonymous"></script>
+
+		<style>
+		.arrow {
+		  pointer-events: none;
+		  z-index: 2;
+		}
+		.arrow__path {
+		  stroke: black;
+		  fill: transparent;
+		  stroke-dasharray: 8 4;
+		  stroke-width: 2px;
+		}
+		.arrow__head line {
+		  stroke: black;
+		  stroke-width: 2px;
+		}
+		.arrow2 {
+		  pointer-events: none;
+		  z-index: 2;
+		}
+		.arrow2__path {
+		  stroke: rgba(0,0,0,0.3);
+		  fill: transparent;
+		  stroke-dasharray: 8 4;
+		  stroke-width: 2px;
+		}
+		.arrow2__head  {
+		  fill: rgba(0,0,0,0.3);
+		}
+		#buildstep2 {
+			opacity: 0.3;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section class="mid">
+					<h1>Hello! 👋</h1>
+					<br>
+					<img class="headshot" style="display: none;">
+					<img src="../global/assets/tjpeace.png" width="200">
+					<aside class="notes">
+						Hello I'm TJ
+					</aside>
+				</section>
+
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h2>Sorry, who?</h2>
+						</div>
+						<div class="col">
+							<ul>
+								<li>NSW Design System Product Manager</li>
+								<li>IxD/UXer</li>
+								<li>Like pairing design and code</li>
+							</ul>
+						</div>
+					</div>
+					<aside class="notes">
+
+					</aside>
+				</section>
+
+				<section data-fullscreen>
+					<div class="twocolumn">
+						<div class="col">
+							<h2>Getting into product</h2>
+							<br><br>
+							<p>Some battle stories from an old web designer <span class="ace">👴🏻</span></p>
+						</div>
+						<div class="col">
+							<p>Never found the right fit between:</p>
+							<ul>
+								<li>UI/Front-end dev</li>
+								<li>UX design</li>
+								<li>Service Design</li>
+								<li>Mastering scrums</li>
+								<li>Managing design teams</li>
+							</ul>
+							<p>I actually just ❤️ making stuff.</p>
+						</div>
+					</div>
+					<aside class="notes">
+
+					</aside>
+				</section>
+
+				<section class="goLeft" data-fullscreen>
+					<p><em><small>Nice origin story, friend, but...</small></em></p>
+					<h4>What are we talking about today?</h4>
+					<br><br>
+					<h1 class="fragment">What does it mean to be a PM for a Design System?</h1>
+
+					<aside class="notes">
+
+					</aside>
+				</section>
+
+				<!-- <section>
+					<h1><span class="fragment">Let's</span> <span class="fragment">get</span> <span class="fragment shake-constant shake-hard">existential!</span></h1>
+				</section> -->
+
+				<section data-fullscreen class="goLeft">
+					<h1>What they tell you <br> (and what they don't)</h1>
+					<div class="twocolumn">
+						<div class="col">
+							<p class="fragment padding-top-m">Day to day team management</p>
+							<p class="fragment padding-top-m">Product roadmap</p>
+							<p class="fragment padding-top-m">Prioritisation</p>
+							<p class="fragment padding-top-m">Taking all the glory</p>
+						</div>
+						<div class="col">
+							<p class="fragment padding-top-m">Politics and politics</p>
+							<p class="fragment padding-top-m">You have to be an everything</p>
+							<p class="fragment padding-top-m">Dizzying zooming in-and-out</p>
+							<p class="fragment padding-top-m">Presentations matter</p>
+						</div>
+					</div>
+					<br>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section data-fullscreen class="goLeft">
+					<h1>A selection of things a design system PM does</h1>
+					<p class="fragment padding-top-m">Explain to 15 people per day how the [another design system] and NSW Design System are different things</p>
+					<p class="fragment padding-top-m">Designer</p>
+					<p class="fragment padding-top-m">Coder</p>
+					<p class="fragment padding-top-m">Team support</p>
+					<p class="fragment padding-top-m">Schmoozer</p>
+					<p class="fragment padding-top-m">Translator</p>
+					<br>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section>
+					<h2>Summary: A PM is a Translator</h2>
+					<br><br>
+					<div class="twocolumn">
+						<div class="col">
+							<p>Most people don't go out of their way to understand other people's stuff</p>
+						</div>
+						<div class="col">
+							<img class="block-shadow" src="https://media.giphy.com/media/PFwKHjOcIoVUc/source.gif" width="480">
+						</div>
+					</div>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section class="dark nsw-blue" data-fullscreen>
+					<h2>Keep strategy connected to the product</h2>
+				</section>
+
+				<section class="dark nsw-blue" data-fullscreen>
+					<h2>Keep prioritisation connected to operationalisation </h2>
+				</section>
+
+				<section class="dark nsw-blue" data-fullscreen>
+					<h2>Own solutions and problems</h2>
+				</section>
+
+				<section class="dark nsw-blue" data-fullscreen>
+					<h2>Own the process</h2>
+				</section>
+
+
+				<section data-fullscreen>
+					<div class="stretch">
+						<br><br>
+						<h1>Product team production process</h1>
+						<br><br>
+						<p>The normal UI/UX and dev process</p>
+						<br><br><br><br>
+						<div class="flexcolumn tjspacer" >
+							<div class="col flush">
+								<h1 class="ace">💬</h1>
+								<p>Research</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush" id="">
+								<h1 class="ace">👩🏽‍💻</h1>
+								<p>UI/UX design</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush">
+								<h1 class="ace">✅</h1>
+								<p>Validate</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush" id="">
+								<h1 class="ace">🧑🏻‍🔧</h1>
+								<p>Build the UI</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush">
+								<h1 class="ace">🧑🏻‍🔧</h1>
+								<p>Integrations</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush">
+								<h1 class="ace">🚀</h1>
+								<p>SHIP IT!</p>
+							</div>
+						</div>
+					</div>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+								<section data-fullscreen id="processSlide">
+									<div class="stretch">
+										<br><br>
+										<h1>Product team production process</h1>
+										<br><br>
+										<p>The <em>actual</em> UI/UX and dev process</p>
+										<br><br><br><br>
+										<div class="flexcolumn tjspacer" >
+											<div class="col flush">
+												<h1>💬</h1>
+												<p>Research</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush" id="prototypestep">
+												<h1>👩🏽‍💻</h1>
+												<p>UI/UX design</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush">
+												<h1>✅</h1>
+												<p>Validate</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush" id="buildstep">
+												<h1>🧑🏻‍🔧</h1>
+												<p>Build the UI</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush">
+												<h1>🧑🏻‍🔧</h1>
+												<p>Integrations</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush">
+												<h1>🚀</h1>
+												<p>SHIP IT!</p>
+											</div>
+										</div>
+									</div>
+									<aside class="notes">
+										Notes 📝
+									</aside>
+								</section>
+
+								<section data-fullscreen id="newProcess">
+									<div class="stretch">
+										<br><br>
+										<h1>Product team production process</h1>
+										<br><br>
+										<p>With a fullstack system, design is about selecting the right components, not building them</p>
+										<br><br><br><br>
+										<div class="flexcolumn tjspacer" >
+											<div class="col flush">
+												<h1>💬</h1>
+												<p>Research</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush" id="prototypestep2">
+												<h1>👩🏽‍💻</h1>
+												<p>FS-UX design</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush">
+												<h1>✅</h1>
+												<p>Validate</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush" id="buildstep2">
+												<h1>🧑🏻‍🔧</h1>
+												<p>Build the UI</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush">
+												<h1>🧑🏻‍🔧</h1>
+												<p>Integrations &amp; UI config</p>
+											</div>
+											<div class="col flush">
+												<h2>→</h2>
+											</div>
+											<div class="col flush">
+												<h1>🚀</h1>
+												<p>SHIP IT!</p>
+											</div>
+										</div>
+									</div>
+									<aside class="notes">
+										Notes 📝
+									</aside>
+								</section>
+
+				<section class="dark nsw-blue" data-fullscreen>
+					<h2>Be ready for things to not work</h2>
+				</section>
+
+
+
+				<section class="fireworks mid end">
+					<h1>Thank you! <br><br></h1>
+					<p><i class="fab fa-twitter"></i> <i class="fab fa-medium"></i> @tjharrop<br><br></p>
+					<p><i class="fab fa-linkedin"></i> linkedin.com/in/tjharrop</p>
+					<br><br>
+				</section>
+
+
+
+
+
+
+				<section class="dark nsw-blue" data-fullscreen>
+					<h2>Layers that can impact users' experiences</h2>
+					<div class="flexcolumn padding-top-l">
+
+						<div class="col">
+							<ul>
+								<span class="fragment">
+									<li>Whether they can reach their goal</li>
+								</span>
+								<span class="fragment">
+									<li class="padding-top-m">Visual Design</li>
+									<li>UI Design</li>
+									<li>Content Design</li>
+									<li>Usability</li>
+									<li>Accessibility</li>
+								</span>
+							</ul>
+						</div>
+						<div class="col">
+							<ul>
+								<span class="fragment">
+									<li class="padding-top-m">Frontend code</li>
+									<li>Backend code</li>
+								</span>
+								<span class="fragment">
+									<li class="padding-top-m">APIs</li>
+									<li>Hosting</li>
+								</span>
+								<span class="fragment padding-top-m">
+									<li class="padding-top-m">Privacy</li>
+									<li>Security</li>
+									<li>Trust</li>
+								</span>
+							</ul>
+						</div>
+					</div>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section class="mid">
+					<p class="fragment fade-up">Everyone is responsible for users' experiences<br><br></p>
+					<p class="fragment fade-up">No designer should/could know all of these practices <br><br></p>
+					<p class="fragment fade-up">Non designers might not share the mindset or skills <br><br></p>
+					<h4 class="fragment fade-up"><em>So...</em><br><br></h4>
+					<p class="fragment fade-up">Growing design's input isn't just about helping designers<br><br></p>
+					<p class="fragment fade-up">We need a framework to help inject the UX-first mindset in the full stack<br><br></p>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section class="goLeft" data-fullscreen>
+					<h1 class="fragment">Full-stack UX</h1>
+					<p class="fragment"><em>
+						Focusing on user experience at every level of a product.
+					</em></p>
+					<br><hr class="fragment"><br>
+					<p class="fragment">To make a good experience, an experience-first mindset should be applied beyond design practices<br><br></p>
+					<p class="fragment">UXers are well placed to champion the mindset<br><br></p>
+					<p class="fragment">But UXers are kinda busy...<br><br></p>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section data-fullscreen class="cover" style="background-image: url(https://media.giphy.com/media/KBKM2vFZFYImI/giphy.gif); background-position: center;">
+					<h1 class="white-box block-shadow">Option 1: Just give your UXers more work</h1>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<!-- <section>
+					<h1>Getting UX into more places</h1>
+				</section> -->
+
+				<section data-fullscreen class="cover" style="background-image: url(https://media.giphy.com/media/inEZXlAOb1TC8/source.gif); background-position: center;">
+						<h1 class="white-box block-shadow">Option 2: Clone them</h1>
+						<aside class="notes">
+							Notes 📝
+						</aside>
+				</section>
+
+				<section data-fullscreen class="cover" style="background-image: url(https://media.giphy.com/media/j0kQJxo5mzGYb4EvWK/giphy.gif); background-position: center;">
+						<h1 class="white-box block-shadow">Option 3: Find UX crossover people for every role</h1>
+						<aside class="notes">
+							Notes 📝
+						</aside>
+				</section>
+
+				<section>
+					<h3>Automate parts of design, so designers can really design</h3>
+					<div class="flexcolumn padding-top-l">
+						<div class="col right-text fragment">A full stack design system</div>
+						<div class="col fragment" style="max-width:200px"><h1>🤝</h1></div>
+						<div class="col left-text fragment">DesignOps 2.0</div>
+					</div>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section class="goLeft" data-fullscreen>
+					<div class="flexcolumn">
+						<div class="col">
+							<h4 class="fragment">Full-stack design system</h4>
+							<p class="fragment padding-top-l">Helps full-stack UX the same way regular design systems help UI/UX</p>
+							<p class="fragment padding-top-m">Good UX off-the-shelf, across the whole stack</p>
+							<p class="fragment padding-top-m">Contain the user-focus for non-designers</p>
+						</div>
+						<div class="col">
+							<h4 class="fragment">DesignOps 2.0</h4>
+							<p class="fragment padding-top-l">Central designers concentrate on a good UX within blocks</p>
+							<p class="fragment padding-top-m">Product teams focus on choosing the right blocks to meet user needs</p>
+							<p class="fragment padding-top-m">Operationalise how to get the design-first bits to non-designers</p>
+						</div>
+					</div>
+
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section class="goLeft" data-fullscreen>
+					<h1 class="">DesignOps 2.0</h1>
+					<p class="padding-top-l">Erica Rider from PayPal will be talking about DesignOps 2.0 in more detail @ 15:10 (next).</p>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section class="dark nsw-blue" data-fullscreen>
+					<h2><br>Anatomy of a full-stack component<br><br></h2>
+					<div class="twocolumn">
+						<div class="col">
+							<h3>Traditional Design System<br><br></h3>
+							<p class="fragment fade-up">UI Design toolkit</p>
+							<ul class="fragment fade-up">
+								<li>Look &amp; feel</li>
+								<li>Digital UI (HTML & CSS)</li>
+							</ul>
+							<p class="fragment fade-up">UI Dev toolkit</p>
+							<ul class="fragment fade-up">
+								<li>The code for a view-layer component (Vue/React)</li>
+								<li>API integration (JS)</li>
+							</ul>
+						</div>
+						<div class="col">
+							<h3>Full-stack Design System<br><br></h3>
+							<p class="fragment fade-up">Tech toolkit</p>
+							<ul class="fragment fade-up">
+								<li>App boilerplate</li>
+								<li>Reliable and secure IaaS &amp; PaaS</li>
+							</ul>
+							<p class="fragment fade-up">Behind-the-scenes user-centricity</p>
+							<ul class="fragment fade-up">
+								<li>Content guidance</li>
+								<li>Helping users come unstuck</li>
+								<li>Support channels</li>
+								<li>Approachability &amp; accessibility</li>
+							</ul>
+						</div>
+					</div>
+
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section data-fullscreen class="tjspacer">
+					<h2 class="padding-top-m">Making DesignOps 2.0 + Full Stack Design Systems work</h2>
+					<div class="flexcolumn padding-top-m tjspacer">
+						<div class="col tjspacer">
+							<h3>Developers</h3>
+							<p>Need components with no unanswered questions, where they might have to interpret intent</p>
+						</div>
+						<div class="col tjspacer">
+							<h3>UI/Product people</h3>
+							<p>Need an accessible tool to communicate what to build, which creates fully usable prototypes</p>
+						</div>
+					</div>
+					<div class="flexcolumn tjspacer">
+						<div class="col tjspacer">
+							<h3>UX/Content people</h3>
+							<p>Need contextual patterns, and a platform to share and extend them</p>
+						</div>
+						<div class="col tjspacer">
+							<h3>Teams</h3>
+							<p>Need to use the same components, from a single source of truth</p>
+						</div>
+					</div>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+<!--
+				<section>
+					<h1 class="wip">Is it about quality or efficiency? The famous triangle fable - assumes it's the same amount of work</h1>
+				</section>
+
+				<section>
+					<h1 class="wip">Quality is about reinvesting the time saved</h1>
+				</section>
+ -->
+				<section data-fullscreen>
+					<h1>4th stage of maturity for Design Systems</h1>
+					<div class="flexcolumn padding-top-l">
+						<div class="col fragment">
+							<span class=" numberspot-light ace">🐌</span>
+							<br><br>
+							<p>A visual design system</p>
+							<ul>
+								<li class="">Image-based design</li>
+								<li class="">Consistent branding</li>
+								<li class="">Look &amp; Feel</li>
+							</ul>
+						</div>
+						<div class="col fragment">
+							<span class=" numberspot-light flip-horiontal ace">🐇</span>
+							<br><br>
+							<p>HTML &amp; CSS examples</p>
+							<ul>
+								<li class="">Image-based design</li>
+								<li class="">CSS is ready-made</li>
+								<li class="">Development required</li>
+							</ul>
+						</div>
+						<div class="col fragment">
+							<span class=" numberspot-light flip-horiontal ace">🚴🏻‍♀️</span>
+							<br><br>
+							<p>Isomorphic image &amp; code</p>
+							<ul>
+								<li class="">Image-based design</li>
+								<li class="">Replica library</li>
+								<li class="">Interpretation required</li>
+							</ul>
+						</div>
+						<div class="col fragment">
+							<span class=" numberspot-light ace">🚀</span>
+							<br><br>
+							<p>Full-stack UX system</p>
+							<ul>
+								<li>Design in (no)code</li>
+								<li class="">Avoid design-drift</li>
+								<li class="">UX focus</li>
+							</ul>
+						</div>
+					</div>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section data-fullscreen>
+					<div class="stretch">
+						<br><br>
+						<h1>Creative tech &amp; UX process</h1>
+						<br><br>
+						<p>The normal UI/UX and dev process</p>
+						<br><br><br><br>
+						<div class="flexcolumn tjspacer" >
+							<div class="col flush">
+								<h1 class="ace">💬</h1>
+								<p>Research</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush" id="">
+								<h1 class="ace">👩🏽‍💻</h1>
+								<p>UI/UX design</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush">
+								<h1 class="ace">✅</h1>
+								<p>Validate</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush" id="">
+								<h1 class="ace">🧑🏻‍🔧</h1>
+								<p>Build the UI</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush">
+								<h1 class="ace">🧑🏻‍🔧</h1>
+								<p>Integrations</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush">
+								<h1 class="ace">🚀</h1>
+								<p>SHIP IT!</p>
+							</div>
+						</div>
+					</div>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section data-fullscreen id="processSlide">
+					<div class="stretch">
+						<br><br>
+						<h1>Creative tech &amp; UX process</h1>
+						<br><br>
+						<p>The <em>actual</em> UI/UX and dev process</p>
+						<br><br><br><br>
+						<div class="flexcolumn tjspacer" >
+							<div class="col flush">
+								<h1>💬</h1>
+								<p>Research</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush" id="prototypestep">
+								<h1>👩🏽‍💻</h1>
+								<p>UI/UX design</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush">
+								<h1>✅</h1>
+								<p>Validate</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush" id="buildstep">
+								<h1>🧑🏻‍🔧</h1>
+								<p>Build the UI</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush">
+								<h1>🧑🏻‍🔧</h1>
+								<p>Integrations</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush">
+								<h1>🚀</h1>
+								<p>SHIP IT!</p>
+							</div>
+						</div>
+					</div>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section data-fullscreen id="newProcess">
+					<div class="stretch">
+						<br><br>
+						<h1>Creative tech &amp; UX process</h1>
+						<br><br>
+						<p>With a fullstack system, design is about selecting the right components, not building them</p>
+						<br><br><br><br>
+						<div class="flexcolumn tjspacer" >
+							<div class="col flush">
+								<h1>💬</h1>
+								<p>Research</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush" id="prototypestep2">
+								<h1>👩🏽‍💻</h1>
+								<p>FS-UX design</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush">
+								<h1>✅</h1>
+								<p>Validate</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush" id="buildstep2">
+								<h1>🧑🏻‍🔧</h1>
+								<p>Build the UI</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush">
+								<h1>🧑🏻‍🔧</h1>
+								<p>Integrations &amp; UI config</p>
+							</div>
+							<div class="col flush">
+								<h2>→</h2>
+							</div>
+							<div class="col flush">
+								<h1>🚀</h1>
+								<p>SHIP IT!</p>
+							</div>
+						</div>
+					</div>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section>
+					<h2 class="">Power up 1: Creative technologists</h2>
+					<p class="padding-top-m fragment">Creative technologists are people who have a creative mindset and a technical skillset.</p>
+					<p class="padding-top-m fragment">They're most often in development roles, as the marketable skills are so similar.</p>
+					<p class="padding-top-m fragment">A creative technologist <em>is</em> a UXer</p>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section>
+					<h2 class="">Power up 2: Contextual patterns</h2>
+					<p class="padding-top-m fragment">What the user is trying to do, not what they're using to do it.</p>
+					<p class="padding-top-m fragment">Channel agnostic.</p>
+					<p class="padding-top-m fragment">Based on a micro-goal.</p>
+					<p class="padding-top-m fragment">Allow linkage between products, business logic, content, and support.</p>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section class="" data-fullscreen>
+					<h2>Tools for product teams</h2>
+					<br><br>
+					<div class="flexcolumn">
+						<div class="col">
+							<p><img src="https://cdn.zeplin.io/assets/lp/img/favicon/228x228.png" height="100"></p>
+							<p>Zeplin</p>
+						</div>
+						<div class="col">
+							<p>
+								<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" height="100">
+								<img src="https://github.com/react-figma/react-figma/raw/master/logo.svg" height="100">
+							</p>
+							<p>Figma &amp; React-figma</p>
+						</div>
+						<div class="col">
+							<p><img src="https://icons-for-free.com/iconfiles/png/512/design+framer+js+learn+icon-1320168263897505927.png" height="100"></p>
+							<p>Framer</p>
+						</div>
+						<div class="col">
+							<p><img src="https://yt3.ggpht.com/ytc/AAUvwnhazV9k5OjDSqnMgPpiQfjUC2j-FHfqIue-YuPLFg=s900-c-k-c0x00ffffff-no-rj" height="100"></p>
+							<p>UXPin Merge</p>
+						</div>
+					</div>
+					<br><br>
+					<p>All of these are no-code</p>
+					<p><em>most</em> use renders of code</p>
+
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section>
+					<h1 class="">Resource: Full stack pattern template</h1>
+					<br><br>
+					<p>tjharrop.com/full-stack-component</p>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section class="mid">
+					<h1 class="">Summary</h1>
+					<div class="flexcolumn">
+						<div class="col">
+							<p class="fragment padding-top-l">UX isn't owned by design</p>
+							<p class="fragment padding-top-l">UX can be a mindset</p>
+							<p class="fragment padding-top-l">That mindset can match any skillset</p>
+						</div>
+						<div class="col">
+							<p class="fragment padding-top-l">You can't just clone people</p>
+							<p class="fragment padding-top-l">Design systems can go further</p>
+							<p class="fragment padding-top-l">Designing with code ≠ coding</p>
+						</div>
+					</div>
+					<aside class="notes">
+						Notes 📝
+					</aside>
+				</section>
+
+				<section class="fireworks mid end">
+					<h1>Thank you! <br><br></h1>
+					<p><i class="fab fa-twitter"></i> <i class="fab fa-medium"></i> @tjharrop<br><br></p>
+					<p>tjharrop.com/full-stack-component</p>
+					<p><i class="fab fa-linkedin"></i> linkedin.com/in/tjharrop</p>
+					<br><br>
+					<p>For more like this, don't miss Erica Rider, Zeplin fireside chat, &amp; UXPin Merge workshop</p>
+				</section>
+			</div>
+		</div>
+
+		<div class="blob" style="right: 8%; top: 65%; transform: scale(12) rotateZ(133deg); background: rgb(81, 157, 216); border-radius: 25% 75% 9% 91% / 58% 72% 28% 42%;"></div>
+		<script src="../global/dist/reveal.js"></script>
+		<script src="../global/blob-maker.js"></script>
+		<script>
+
+		const arrow1 = arrowCreate({
+			className: 'arrow',
+			from: {
+				direction: 'top-left',
+				node: document.getElementById('buildstep'),
+				translation: [-0.3, -5],
+			},
+			to: {
+				direction: 'top-right',
+				node: document.getElementById('prototypestep'),
+				translation: [0.3, -5],
+			},
+			head: {
+				func: 'normal',
+				distance: 1.02
+			}
+		})
+
+		const arrow2 = arrowCreate({
+			className: 'arrow',
+			to: {
+				direction: 'bottom-left',
+				node: document.getElementById('buildstep'),
+				translation: [-0.3, 5],
+			},
+			from: {
+				direction: 'bottom-right',
+				node: document.getElementById('prototypestep'),
+				translation: [0.3, 5],
+			},
+			head: {
+				func: 'normal',
+				distance: 1.02
+			}
+		})
+
+		const arrow3 = arrowCreate({
+			className: 'arrow2',
+			from: {
+				direction: 'top-left',
+				node: document.getElementById('buildstep'),
+				translation: [-0.3, -5],
+			},
+			to: {
+				direction: 'top-right',
+				node: document.getElementById('prototypestep'),
+				translation: [0.3, -5],
+			},
+			head: {
+				func: 'normal',
+				distance: 1.02
+			}
+		})
+
+		const arrow4 = arrowCreate({
+			className: 'arrow2',
+			to: {
+				direction: 'bottom-left',
+				node: document.getElementById('buildstep2'),
+				translation: [-0.3, 5],
+			},
+			from: {
+				direction: 'bottom-right',
+				node: document.getElementById('prototypestep2'),
+				translation: [0.3, 5],
+			},
+			head: {
+				func: 'normal',
+				distance: 1.02
+			}
+		})
+
+		document.getElementById('processSlide').appendChild(arrow1.node);
+		document.getElementById('processSlide').appendChild(arrow2.node);
+
+		document.getElementById('newProcess').appendChild(arrow3.node);
+		document.getElementById('newProcess').appendChild(arrow4.node);
+
+		</script>
+
+	</body>
+</html>
